@@ -9,7 +9,7 @@ import MainLayout from '../layouts/MainLayout';
 import Home from '../Pages/Home/home.jsx';
 import Doctors from '../Pages/Doctors/doctors.jsx';
 import HowItWorks from '../Pages/HowItWorks/howitworks.jsx';
-import Contact from '../Pages/Contact/Contact.jsx';
+import Contact from '../Pages/Contact/contact.jsx';
 
 const AppRoutes = () => {
   return (
