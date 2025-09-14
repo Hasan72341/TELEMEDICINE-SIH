@@ -6,10 +6,10 @@ import { AnimatePresence } from 'motion/react';
 import MainLayout from '../layouts/MainLayout';
 
 // Pages
-import Home from '../pages/Home/home';
-import Doctors from '../pages/Doctors/doctors';
-import HowItWorks from '../pages/HowItWorks/HowItWorks';
-import Contact from '../pages/Contact/Contact';
+import Home from '../Pages/Home/home.jsx';
+import Doctors from '../Pages/Doctors/doctors.jsx';
+import HowItWorks from '../Pages/HowItWorks/HowItWorks.jsx';
+import Contact from '../Pages/Contact/Contact.jsx';
 
 const AppRoutes = () => {
   return (
