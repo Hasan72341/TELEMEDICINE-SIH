@@ -1,0 +1,58 @@
+{
+  "features": [
+    {
+      "id": "ai",
+      "icon": "🤖",
+      "title": "AI Symptom Checker",
+      "description": "Get instant preliminary health assessment using advanced AI technology. Available 24/7 with privacy protection.",
+      "cta": "Start AI Assessment",
+      "variant": "ai"
+    },
+    {
+      "id": "doctors",
+      "icon": "👩‍⚕️",
+      "title": "MBBS/MD Doctors",
+      "description": "Government certified doctors from PGIMER, DMC Ludhiana available 24/7"
+    },
+    {
+      "id": "access",
+      "icon": "📶",
+      "title": "Easy Access",
+      "description": "Consult from anywhere using your smartphone or computer"
+    },
+    {
+      "id": "medicine",
+      "icon": "💊",
+      "title": "Medicine Delivery",
+      "description": "Get medicines from Jan Aushadhi and local pharmacies delivered home"
+    },
+    {
+      "id": "privacy",
+      "icon": "🔒",
+      "title": "Secure & Private",
+      "description": "Digital India compliant platform ensuring your privacy"
+    }
+  ],
+  "services": [
+    {
+      "id": "general",
+      "title": "General Medicine",
+      "description": "Treatment for fever, cold, stomach problems and other common ailments"
+    },
+    {
+      "id": "mental",
+      "title": "Mental Health",
+      "description": "Counseling and therapy for stress, depression and mental health issues"
+    },
+    {
+      "id": "specialist",
+      "title": "Specialist Care",
+      "description": "Access to cardiologists, dermatologists, pediatricians and more"
+    },
+    {
+      "id": "monitoring",
+      "title": "Health Monitoring",
+      "description": "Regular check-ups for diabetes, hypertension and chronic conditions"
+    }
+  ]
+}

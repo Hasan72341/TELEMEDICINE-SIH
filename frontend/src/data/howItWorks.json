@@ -1,0 +1,31 @@
+{
+  "steps": [
+    {
+      "id": 1,
+      "number": "01",
+      "icon": "👤",
+      "title": "Create Your Account",
+      "description": "Sign up with your basic information and medical history. It takes less than 5 minutes to get started."
+    },
+    {
+      "id": 2,
+      "number": "02",
+      "icon": "👨‍⚕️",
+      "title": "Choose Your Doctor",
+      "description": "Browse through our network of certified healthcare professionals and select the one that fits your needs."
+    },
+    {
+      "id": 3,
+      "number": "03",
+      "icon": "📅",
+      "title": "Book Your Appointment",
+      "description": "Schedule your consultation at a time that works for you. Same-day appointments are often available."
+    }
+  ],
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Join thousands of patients who have already experienced the convenience of telemedicine.",
+    "primary": "Start Your Consultation",
+    "secondary": "Learn More"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr. Preet Kaur Singh",
+      "specialty": "General Medicine",
+      "experience": "15 years",
+      "rating": 4.9,
+      "image": "👩‍⚕️",
+      "availability": "Available Now",
+      "price": "₹3"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Rajesh Kumar Sharma",
+      "specialty": "Cardiologist",
+      "experience": "12 years",
+      "rating": 4.8,
+      "image": "👨‍⚕️",
+      "availability": "Available in 30 mins",
+      "price": "₹5"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Simran Bhatia",
+      "specialty": "Pediatrician",
+      "experience": "10 years",
+      "rating": 4.9,
+      "image": "👩‍⚕️",
+      "availability": "Available Now",
+      "price": "₹4"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Amarjeet Singh Gill",
+      "specialty": "Dermatologist",
+      "experience": "18 years",
+      "rating": 4.7,
+      "image": "👨‍⚕️",
+      "availability": "Available in 1 hour",
+      "price": "₹4"
+    },
+    {
+      "id": 5,
+      "name": "Dr. Manpreet Kaur Dhillon",
+      "specialty": "Psychiatrist",
+      "experience": "8 years",
+      "rating": 4.9,
+      "image": "👩‍⚕️",
+      "availability": "Available Now",
+      "price": "₹6"
+    },
+    {
+      "id": 6,
+      "name": "Dr. Hardeep Singh Brar",
+      "specialty": "Orthopedist",
+      "experience": "20 years",
+      "rating": 4.8,
+      "image": "👨‍⚕️",
+      "availability": "Available Tomorrow",
+      "price": "₹5"
+    }
+  ]
+}
