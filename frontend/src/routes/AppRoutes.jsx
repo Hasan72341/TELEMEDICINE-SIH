@@ -5,25 +5,25 @@ import { AnimatePresence } from 'motion/react';
 // Layout
 import MainLayout from '../layouts/MainLayout';
 
-// Pages - Existing
-import Home from "../Pages/Home/Home";
-import Doctors from "../Pages/Doctors/Doctors";
+// Pages - Existing  
+import Home from "../Pages/Home/home";
+import Doctors from "../Pages/Doctors/doctors";
 import Contact from "../Pages/Contact/Contact";
-import HowItWorks from "../Pages/HowItWorks/HowItWorks";
+import HowItWorks from "../Pages/HowItWorks/howitworks";
 
 // Pages - New Features
-import LanguageSelect from '../Pages/LanguageSelect/LanguageSelect.jsx';
-import Login from '../Pages/Login/Login.jsx';
-import NewHome from '../Pages/Home/NewHome.jsx';
-import SymptomChecker from '../Pages/SymptomChecker/SymptomChecker.jsx';
-import AISymptomChecker from '../Pages/AISymptomChecker/AISymptomChecker.jsx';
-import Consultation from '../Pages/Consultation/Consultation.jsx';
-import VideoCall from '../Pages/VideoCall/VideoCall.jsx';
-import ConsultationSummary from '../Pages/ConsultationSummary/ConsultationSummary.jsx';
-import Shop from '../Pages/Shop/Shop.jsx';
+import LanguageSelect from '../Pages/LanguageSelect/LanguageSelect';
+import Login from '../Pages/Login/Login';
+import NewHome from '../Pages/Home/NewHome';
+import SymptomChecker from '../Pages/SymptomChecker/SymptomChecker';
+import AISymptomChecker from '../Pages/AISymptomChecker/AISymptomChecker';
+import Consultation from '../Pages/Consultation/Consultation';
+import VideoCall from '../Pages/VideoCall/VideoCall';
+import ConsultationSummary from '../Pages/ConsultationSummary/ConsultationSummary';
+import Shop from '../Pages/Shop/Shop';
 
 // Components
-import AuthRedirect from '../components/AuthRedirect/AuthRedirect.jsx';
+import AuthRedirect from '../components/AuthRedirect/AuthRedirect';
 
 const AppRoutes = () => {
   return (
