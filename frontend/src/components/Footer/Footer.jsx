@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -15,32 +17,32 @@ const Footer = () => {
               <span className="logo-text">Gramin Swasthya</span>
             </div>
             <p className="footer-description">
-              Providing quality healthcare services across rural India through innovative telemedicine solutions.
+              {t('footer.description')}
             </p>
           </div>
 
           <div className="footer-section">
-            <h4>Quick Links</h4>
+            <h4>{t('footer.quickLinks')}</h4>
             <ul className="footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/doctors">Find Doctors</Link></li>
-              <li><Link to="/how-it-works">How It Works</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/">{t('navigation.home')}</Link></li>
+              <li><Link to="/doctors">{t('footer.findDoctors')}</Link></li>
+              <li><Link to="/how-it-works">{t('navigation.howItWorks')}</Link></li>
+              <li><Link to="/contact">{t('navigation.contact')}</Link></li>
             </ul>
           </div>
 
           <div className="footer-section">
-            <h4>Contact Info</h4>
+            <h4>{t('footer.contactInfo')}</h4>
             <div className="contact-info">
-              <p>📞 +91 98765 43210</p>
-              <p>✉️ info@healthcarepunjab.com</p>
-              <p>📍 Sector 17, Chandigarh, Punjab</p>
+              <p>📞 {t('footer.phone')}</p>
+              <p>✉️ {t('footer.email')}</p>
+              <p>📍 {t('footer.address')}</p>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Gramin Swasthya. All rights reserved.</p>
+          <p>&copy; {currentYear} Gramin Swasthya. {t('footer.allRightsReserved')}</p>
         </div>
       </div>
     </footer>

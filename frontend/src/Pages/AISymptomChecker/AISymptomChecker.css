@@ -1,0 +1,117 @@
+/* Advanced AI Symptom Checker Styles */
+.ai-symptom-checker-container {
+  min-height: 100vh;
+  background: var(--color-bg);
+  padding: 20px;
+  color: var(--color-text);
+}
+
+.ai-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: var(--color-border);
+}
+
+.ai-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.ai-header p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: var(--color-surface-muted);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.ai-avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+}
+
+.ai-brain {
+  font-size: 4rem;
+  position: relative;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--color-text);
+}
+
+.ai-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-surface);
+  padding: 15px 20px;
+  border-radius: 25px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.feature-item span:not(.feature-icon) {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+}
+
+.start-analysis-btn {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.start-analysis-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}

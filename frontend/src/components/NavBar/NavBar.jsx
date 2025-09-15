@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import "./NavBar.css";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -56,29 +59,30 @@ const NavBar = () => {
             className={`navbar-link ${isActiveLink("/") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            Home
+            {t('navigation.home')}
           </Link>
           <Link
             to="/doctors"
             className={`navbar-link ${isActiveLink("/doctors") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            Find Doctors
+            {t('navigation.doctors')}
           </Link>
           <Link
             to="/how-it-works"
             className={`navbar-link ${isActiveLink("/how-it-works") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            How It Works
+            {t('navigation.howItWorks')}
           </Link>
           <Link
             to="/contact"
             className={`navbar-link ${isActiveLink("/contact") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            Contact
+            {t('navigation.contact')}
           </Link>
+          <LanguageSwitcher />
         </div>
 
         <button

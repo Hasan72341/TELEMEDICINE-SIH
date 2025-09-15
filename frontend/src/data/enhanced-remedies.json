@@ -1,0 +1,288 @@
+{
+  "remedies": [
+    {
+      "condition": "Common Cold & Flu",
+      "symptoms": ["runny nose", "sneezing", "sore throat", "cough", "nasal congestion", "fatigue", "mild fever"],
+      "severity": "mild",
+      "category": "respiratory",
+      "duration": "3-7 days",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Drink warm water with honey and lemon (2-3 times daily)",
+        "Gargle with salt water (1 tsp salt in warm water)",
+        "Take steam inhalation with eucalyptus oil",
+        "Rest and sleep 8-10 hours daily",
+        "Drink herbal teas (ginger, tulsi, chamomile)",
+        "Eat vitamin C rich foods (oranges, amla, guava)"
+      ],
+      "medicines": [
+        "Paracetamol 500mg (for fever and body ache)",
+        "Cetirizine 10mg (for runny nose and sneezing)",
+        "Dextromethorphan cough syrup (for dry cough)",
+        "Throat lozenges for sore throat"
+      ],
+      "warning": "Consult doctor if symptoms persist for more than 7 days, fever exceeds 101°F, or if you develop breathing difficulties",
+      "audioText": "Sardi-jukam ke liye garam paani mein honey aur nimbu dalkar piyein. Namak ke paani se gargle karein. Steam lein aur aaram karein.",
+      "prevention": ["Wash hands frequently", "Avoid crowded places", "Wear mask in public", "Maintain good hygiene"]
+    },
+    {
+      "condition": "High Fever",
+      "symptoms": ["high temperature", "chills", "sweating", "headache", "body ache", "weakness", "loss of appetite", "fever"],
+      "severity": "moderate",
+      "category": "general",
+      "duration": "2-5 days",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Take complete bed rest",
+        "Drink plenty of fluids (3-4 liters daily)",
+        "Apply cold compress on forehead and wrists",
+        "Wear light, breathable clothing",
+        "Take lukewarm sponge bath",
+        "Consume coconut water and fresh fruit juices"
+      ],
+      "medicines": [
+        "Paracetamol 500mg every 6 hours",
+        "Ibuprofen 400mg if paracetamol is ineffective",
+        "ORS solution for electrolyte balance",
+        "Multivitamin tablets"
+      ],
+      "warning": "URGENT: Seek immediate medical attention if fever exceeds 103°F, persists for more than 3 days, or if you experience severe headache, vomiting, or difficulty breathing",
+      "audioText": "Tez bukhar ke liye turant aaram karein, bahut saara paani piyein aur paracetamol lein. Agar bukhar 103 degree se zyada ho toh doctor se milein.",
+      "prevention": ["Stay hydrated", "Avoid stress", "Maintain good nutrition", "Get adequate sleep"]
+    },
+    {
+      "condition": "Stomach Pain & Indigestion",
+      "symptoms": ["stomach pain", "bloating", "nausea", "gas", "heartburn", "loss of appetite", "stomach cramps", "abdominal pain", "belly ache"],
+      "severity": "mild",
+      "category": "digestive",
+      "duration": "1-3 days",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Drink warm water with a pinch of black salt",
+        "Take ajwain (carom seeds) with warm water",
+        "Consume fresh mint leaves or mint tea",
+        "Apply warm compress on stomach",
+        "Eat light, easily digestible food",
+        "Practice gentle abdominal massage"
+      ],
+      "medicines": [
+        "Antacid tablets (ENO, Digene)",
+        "Omeprazole 20mg (for acid reflux)",
+        "Simethicone drops (for gas)",
+        "Probiotic capsules"
+      ],
+      "warning": "Consult doctor if pain is severe, persists for more than 2 days, or if you experience vomiting, fever, or blood in stool",
+      "audioText": "Pet dard ke liye garam paani mein kala namak dalkar piyein. Ajwain khayein aur halka khana lein.",
+      "prevention": ["Eat regular meals", "Avoid spicy food", "Chew food slowly", "Don't eat late at night"]
+    },
+    {
+      "condition": "Headache & Migraine",
+      "symptoms": ["headache", "throbbing pain", "sensitivity to light", "nausea", "dizziness", "neck stiffness", "head pain", "migraine"],
+      "severity": "moderate",
+      "category": "neurological",
+      "duration": "2-72 hours",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Rest in a dark, quiet room",
+        "Apply cold compress on forehead",
+        "Massage temples gently with eucalyptus oil",
+        "Stay hydrated - drink water regularly",
+        "Practice deep breathing exercises",
+        "Get adequate sleep (7-8 hours)"
+      ],
+      "medicines": [
+        "Paracetamol 500mg",
+        "Ibuprofen 400mg",
+        "Sumatriptan (for severe migraine)",
+        "Caffeine tablets (if needed)"
+      ],
+      "warning": "Seek immediate medical help if headache is sudden and severe, accompanied by fever, stiff neck, confusion, or vision problems",
+      "audioText": "Sir dard ke liye andheri jagah mein aaram karein, thanda patti lagayein aur paani peete rahein.",
+      "prevention": ["Manage stress", "Regular sleep schedule", "Avoid trigger foods", "Stay hydrated"]
+    },
+    {
+      "condition": "Cough & Throat Infection",
+      "symptoms": ["persistent cough", "sore throat", "throat irritation", "phlegm", "hoarse voice", "chest congestion", "cough", "dry cough"],
+      "severity": "mild",
+      "category": "respiratory",
+      "duration": "5-10 days",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Gargle with warm salt water 3-4 times daily",
+        "Drink warm water with honey and ginger",
+        "Take steam inhalation twice daily",
+        "Consume turmeric milk before bedtime",
+        "Eat throat-soothing foods like warm soup",
+        "Avoid cold drinks and ice cream"
+      ],
+      "medicines": [
+        "Cough expectorant syrup",
+        "Throat lozenges with benzocaine",
+        "Amoxicillin (if bacterial infection)",
+        "Antihistamines for allergic cough"
+      ],
+      "warning": "Consult doctor if cough persists for more than 2 weeks, blood in sputum, or difficulty breathing",
+      "audioText": "Khansi aur gale ki kharab ke liye namak ke garam paani se gargle karein, honey-ginger ka paani piyein.",
+      "prevention": ["Avoid smoking", "Stay away from pollutants", "Use humidifier", "Drink warm fluids"]
+    },
+    {
+      "condition": "Skin Allergies & Rashes",
+      "symptoms": ["skin rash", "itching", "redness", "swelling", "hives", "burning sensation", "dry skin", "allergic reaction"],
+      "severity": "mild",
+      "category": "dermatological",
+      "duration": "3-7 days",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Apply aloe vera gel on affected area",
+        "Use cold compress to reduce itching",
+        "Take oatmeal baths for soothing effect",
+        "Apply coconut oil for moisturizing",
+        "Use neem paste for bacterial infections",
+        "Avoid scratching the affected area"
+      ],
+      "medicines": [
+        "Antihistamine tablets (Cetirizine, Loratadine)",
+        "Calamine lotion for topical relief",
+        "Hydrocortisone cream for inflammation",
+        "Antifungal cream if fungal infection"
+      ],
+      "warning": "Seek immediate medical attention if rash spreads rapidly, difficulty breathing, or severe swelling of face/throat",
+      "audioText": "Skin allergy ke liye aloe vera lagayein, thanda pani se nahayein aur khujli na karein.",
+      "prevention": ["Identify allergens", "Use mild soaps", "Wear cotton clothes", "Keep skin moisturized"]
+    },
+    {
+      "condition": "Anxiety & Stress",
+      "symptoms": ["restlessness", "worry", "rapid heartbeat", "sweating", "difficulty concentrating", "insomnia", "fatigue", "anxiety", "stress", "panic"],
+      "severity": "moderate",
+      "category": "mental-health",
+      "duration": "Variable",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Practice deep breathing exercises daily",
+        "Do regular meditation (10-15 minutes)",
+        "Exercise regularly - walking, yoga",
+        "Maintain a regular sleep schedule",
+        "Limit caffeine and alcohol intake",
+        "Spend time in nature or with loved ones"
+      ],
+      "medicines": [
+        "Herbal supplements (Ashwagandha, Brahmi)",
+        "Magnesium supplements",
+        "Melatonin for sleep (consult doctor)",
+        "Professional counseling recommended"
+      ],
+      "warning": "Seek professional help if symptoms interfere with daily life or if you have thoughts of self-harm",
+      "audioText": "Tension aur chinta ke liye deep breathing karein, meditation karein aur regular exercise karein.",
+      "prevention": ["Regular exercise", "Stress management", "Adequate sleep", "Social support"]
+    },
+    {
+      "condition": "Joint Pain & Arthritis",
+      "symptoms": ["joint pain", "stiffness", "swelling", "reduced mobility", "morning stiffness", "joint warmth", "muscle pain", "back pain"],
+      "severity": "moderate",
+      "category": "musculoskeletal",
+      "duration": "Chronic condition",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Apply warm compress to stiff joints",
+        "Gentle stretching and yoga exercises",
+        "Turmeric milk with black pepper",
+        "Massage with warm mustard oil",
+        "Maintain healthy weight",
+        "Use hot water therapy"
+      ],
+      "medicines": [
+        "Ibuprofen or Diclofenac for pain",
+        "Glucosamine supplements",
+        "Calcium and Vitamin D tablets",
+        "Topical pain relief gels"
+      ],
+      "warning": "Consult rheumatologist if joint pain is severe, persistent, or affects multiple joints",
+      "audioText": "Jodon ke dard ke liye garam tel se massage karein, haldi wala dudh piyein aur halki exercise karein.",
+      "prevention": ["Regular exercise", "Maintain healthy weight", "Proper posture", "Avoid repetitive stress"]
+    },
+    {
+      "condition": "Diarrhea & Loose Motions",
+      "symptoms": ["diarrhea", "loose motions", "frequent stools", "stomach cramps", "dehydration", "weakness", "nausea"],
+      "severity": "moderate",
+      "category": "digestive",
+      "duration": "2-7 days",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Drink ORS solution frequently",
+        "Eat BRAT diet (Banana, Rice, Applesauce, Toast)",
+        "Consume buttermilk with salt",
+        "Take probiotics (curd, yogurt)",
+        "Avoid dairy and spicy foods",
+        "Stay hydrated with clear fluids"
+      ],
+      "medicines": [
+        "ORS packets for rehydration",
+        "Loperamide for severe cases",
+        "Zinc supplements",
+        "Probiotic capsules"
+      ],
+      "warning": "Seek medical help if blood in stool, severe dehydration, high fever, or symptoms persist for more than 3 days",
+      "audioText": "Dast ke liye ORS solution piyein, BRAT diet lein aur paani ki kami na hone dein.",
+      "prevention": ["Drink clean water", "Eat fresh food", "Maintain hygiene", "Avoid street food"]
+    },
+    {
+      "condition": "Diabetes Symptoms",
+      "symptoms": ["excessive thirst", "frequent urination", "unexplained weight loss", "fatigue", "blurred vision", "slow healing wounds"],
+      "severity": "high",
+      "category": "endocrine",
+      "duration": "Chronic condition",
+      "matchScore": 0,
+      "homeRemedies": [
+        "Monitor blood sugar regularly",
+        "Follow diabetic diet plan",
+        "Exercise daily (30 minutes walking)",
+        "Manage stress levels",
+        "Stay hydrated",
+        "Get adequate sleep"
+      ],
+      "medicines": [
+        "Consult endocrinologist for proper medication",
+        "Blood glucose monitoring strips",
+        "Diabetes management medications as prescribed",
+        "Regular health checkups required"
+      ],
+      "warning": "CRITICAL: Requires immediate medical consultation. Do not ignore these symptoms. Uncontrolled diabetes can lead to serious complications.",
+      "audioText": "Diabetes ke symptoms hain toh turant doctor se milein. Ye serious condition hai jo treatment ki zaroorat hai.",
+      "prevention": ["Healthy diet", "Regular exercise", "Weight management", "Regular health screenings"]
+    }
+  ],
+  "symptomKeywords": {
+    "fever": ["fever", "bukhar", "high temperature", "chills", "sweating", "body heat"],
+    "cough": ["cough", "khansi", "dry cough", "wet cough", "persistent cough", "throat irritation"],
+    "headache": ["headache", "sir dard", "migraine", "throbbing", "head pain", "sensitivity to light"],
+    "stomach": ["stomach pain", "pet dard", "abdominal pain", "belly ache", "gastric", "bloating", "nausea"],
+    "throat": ["sore throat", "gala kharab", "throat pain", "throat infection", "hoarse voice"],
+    "cold": ["cold", "sardi", "runny nose", "nasal congestion", "sneezing", "stuffy nose"],
+    "skin": ["rash", "itching", "skin allergy", "hives", "redness", "swelling", "burning sensation"],
+    "anxiety": ["anxiety", "stress", "tension", "worry", "restlessness", "panic", "rapid heartbeat"],
+    "joint": ["joint pain", "arthritis", "stiffness", "muscle pain", "back pain", "reduced mobility"],
+    "diarrhea": ["diarrhea", "loose motions", "frequent stools", "stomach cramps", "dehydration"]
+  },
+  "severityLevels": {
+    "mild": {
+      "color": "#4CAF50",
+      "description": "Generally manageable with home remedies",
+      "action": "Monitor symptoms and try home remedies"
+    },
+    "moderate": {
+      "color": "#FF9800",
+      "description": "May require medical consultation",
+      "action": "Consider consulting a doctor if symptoms persist"
+    },
+    "high": {
+      "color": "#f44336",
+      "description": "Requires immediate medical attention",
+      "action": "Consult a doctor immediately"
+    }
+  },
+  "riskFactors": {
+    "age": ["infant", "child", "adult", "elderly"],
+    "chronic_conditions": ["diabetes", "hypertension", "heart disease", "asthma"],
+    "lifestyle": ["smoker", "alcohol", "sedentary", "stress"]
+  }
+}

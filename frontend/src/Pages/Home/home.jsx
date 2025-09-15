@@ -3,7 +3,7 @@ import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import FeatureCard from "../../components/Cards/FeatureCard";
 import ServiceCard from "../../components/Cards/ServiceCard";
 import homeData from "../../data/home.json";
-import "./home.css";
+import "./Home.css";
 
 const Home = () => {
   return (

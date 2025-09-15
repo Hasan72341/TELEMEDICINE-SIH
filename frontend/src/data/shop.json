@@ -1,0 +1,132 @@
+{
+  "medicines": [
+    {
+      "id": "paracetamol",
+      "name": "Paracetamol 500mg",
+      "brand": "Crocin",
+      "category": "Pain Relief",
+      "price": 25,
+      "originalPrice": 30,
+      "image": "💊",
+      "description": "For fever, headache, and body pain relief",
+      "prescription": false,
+      "inStock": true,
+      "quantity": "10 tablets",
+      "manufacturer": "GSK",
+      "uses": ["Fever", "Headache", "Body Pain"]
+    },
+    {
+      "id": "amoxicillin",
+      "name": "Amoxicillin 250mg",
+      "brand": "Novamox",
+      "category": "Antibiotic",
+      "price": 85,
+      "originalPrice": 95,
+      "image": "💉",
+      "description": "Antibiotic for bacterial infections",
+      "prescription": true,
+      "inStock": true,
+      "quantity": "10 capsules",
+      "manufacturer": "Cipla",
+      "uses": ["Bacterial Infection", "Respiratory Infection"]
+    },
+    {
+      "id": "omeprazole",
+      "name": "Omeprazole 20mg",
+      "brand": "Omez",
+      "category": "Acidity",
+      "price": 45,
+      "originalPrice": 52,
+      "image": "💊",
+      "description": "For acidity and stomach ulcers",
+      "prescription": false,
+      "inStock": true,
+      "quantity": "15 tablets",
+      "manufacturer": "Dr. Reddy's",
+      "uses": ["Acidity", "Heartburn", "Stomach Ulcer"]
+    },
+    {
+      "id": "cetirizine",
+      "name": "Cetirizine 10mg",
+      "brand": "Zyrtec",
+      "category": "Allergy",
+      "price": 35,
+      "originalPrice": 40,
+      "image": "💊",
+      "description": "Anti-allergic for skin rash and cold symptoms",
+      "prescription": false,
+      "inStock": false,
+      "quantity": "10 tablets",
+      "manufacturer": "UCB",
+      "uses": ["Allergy", "Skin Rash", "Cold Symptoms"]
+    },
+    {
+      "id": "metformin",
+      "name": "Metformin 500mg",
+      "brand": "Glycomet",
+      "category": "Diabetes",
+      "price": 125,
+      "originalPrice": 140,
+      "image": "💊",
+      "description": "For Type 2 diabetes management",
+      "prescription": true,
+      "inStock": true,
+      "quantity": "30 tablets",
+      "manufacturer": "USV",
+      "uses": ["Type 2 Diabetes", "Blood Sugar Control"]
+    },
+    {
+      "id": "vitamin_d",
+      "name": "Vitamin D3 60K",
+      "brand": "Calcirol",
+      "category": "Vitamins",
+      "price": 95,
+      "originalPrice": 110,
+      "image": "🟡",
+      "description": "Vitamin D supplement for bone health",
+      "prescription": false,
+      "inStock": true,
+      "quantity": "4 sachets",
+      "manufacturer": "Cadila",
+      "uses": ["Vitamin D Deficiency", "Bone Health"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "pain_relief",
+      "name": "Pain Relief",
+      "icon": "🩹",
+      "count": 12
+    },
+    {
+      "id": "antibiotic",
+      "name": "Antibiotics",
+      "icon": "💉",
+      "count": 8
+    },
+    {
+      "id": "vitamins",
+      "name": "Vitamins",
+      "icon": "🟡",
+      "count": 15
+    },
+    {
+      "id": "diabetes",
+      "name": "Diabetes Care",
+      "icon": "📊",
+      "count": 6
+    },
+    {
+      "id": "heart",
+      "name": "Heart Care",
+      "icon": "❤️",
+      "count": 9
+    }
+  ],
+  "cart": [],
+  "deliveryInfo": {
+    "freeDeliveryAbove": 500,
+    "standardDelivery": "2-3 days",
+    "expressDelivery": "Same day (extra ₹50)"
+  }
+}

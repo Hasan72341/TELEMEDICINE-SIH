@@ -1,0 +1,348 @@
+{
+  "navigation": {
+    "home": "Home",
+    "doctors": "Doctors",
+    "howItWorks": "How It Works",
+    "symptomChecker": "Symptom Checker",
+    "consultation": "Consultation",
+    "shop": "Shop",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Telemedicine Platform",
+    "subtitle": "Connect with certified doctors from anywhere",
+    "welcomeTitle": "Welcome to Rural Health Platform",
+    "welcomeSubtitle": "Your health is our priority - Accessible healthcare for everyone",
+    "mainServices": "Main Services",
+    "quickActions": "Quick Actions",
+    "healthTipTitle": "Today's Health Tip",
+    "healthTip": "Drink at least 8 glasses of water daily for good health.",
+    "healthTipHindi": "Stay hydrated for good health.",
+    "voiceCommandsTitle": "Available Voice Commands:",
+    "voiceCommands": {
+      "checkSymptoms": "Check Symptoms - Open AI Symptom Checker",
+      "bookDoctor": "Book Doctor - Start consultation booking",
+      "buyMedicine": "Buy Medicine - Open medicine shop",
+      "emergencyHelp": "Emergency Help - Connect to emergency services"
+    },
+    "features": {
+      "howItWorks": {
+        "title": "How It Works",
+        "description": "Learn how to use our telemedicine platform step by step"
+      },
+      "aiSymptomChecker": {
+        "title": "AI Symptom Checker",
+        "description": "Get instant health assessment using advanced AI technology"
+      },
+      "bookConsultation": {
+        "title": "Book Consultation",
+        "description": "Connect with certified doctors for video consultations"
+      },
+      "shopMedicines": {
+        "title": "Shop Medicines",
+        "description": "Order prescribed medicines with home delivery"
+      }
+    },
+    "quickActionsItems": {
+      "emergency": {
+        "title": "Emergency",
+        "description": "Connect to emergency services"
+      },
+      "myHealth": {
+        "title": "My Health",
+        "description": "View your health records"
+      },
+      "prescriptions": {
+        "title": "Prescriptions",
+        "description": "View past prescriptions"
+      }
+    }
+  },
+  "doctors": {
+    "title": "Our Expert Doctors",
+    "subtitle": "Connect with the finest healthcare professionals in rural India from the comfort of your home",
+    "searchPlaceholder": "Search doctors, specialties...",
+    "availability": {
+      "available": "Available",
+      "busy": "Busy"
+    },
+    "bookAppointment": "Book Appointment",
+    "experience": "{{years}} years experience",
+    "rating": "Rating: {{rating}}/5",
+    "consultationFee": "₹{{fee}} consultation",
+    "filters": {
+      "specialty": {
+        "label": "Specialty:",
+        "all": "All Specialties",
+        "general": "General Medicine",
+        "cardiology": "Cardiology",
+        "pediatrics": "Pediatrics",
+        "dermatology": "Dermatology",
+        "mentalHealth": "Mental Health",
+        "orthopedics": "Orthopedics"
+      },
+      "availability": {
+        "label": "Availability:",
+        "anytime": "Anytime",
+        "now": "Available Now",
+        "today": "Today",
+        "tomorrow": "Tomorrow"
+      },
+      "sortBy": {
+        "label": "Sort By:",
+        "rating": "Highest Rated",
+        "experience": "Most Experienced",
+        "priceLow": "Price: Low to High",
+        "priceHigh": "Price: High to Low"
+      }
+    },
+    "emergency": {
+      "title": "Emergency Consultation",
+      "description": "Need immediate medical assistance? Connect with our emergency doctors instantly.",
+      "button": "Get Emergency Help"
+    }
+  },
+  "symptomChecker": {
+    "title": "AI Symptom Checker",
+    "subtitle": "Describe your symptoms and get instant health insights",
+    "placeholder": "Describe your symptoms in detail...",
+    "voiceInput": "🎤 Voice Input",
+    "analyzeSymptoms": "Analyze Symptoms",
+    "disclaimer": "*Not a substitute for professional medical advice"
+  },
+  "consultation": {
+    "title": "Book Consultation",
+    "subtitle": "Schedule a video call with a certified doctor",
+    "steps": {
+      "details": "Patient Details",
+      "doctor": "Choose Doctor",
+      "payment": "Payment",
+      "confirmation": "Confirmation"
+    }
+  },
+  "shop": {
+    "title": "Medicine Shop",
+    "subtitle": "Order medicines with home delivery",
+    "categories": {
+      "all": "All",
+      "pain": "Pain Relief",
+      "cold": "Cold & Flu",
+      "digestive": "Digestive",
+      "skincare": "Skincare"
+    },
+    "addToCart": "Add to Cart",
+    "cart": "Cart",
+    "total": "Total"
+  },
+  "contact": {
+    "title": "Contact Gramin Swasthya",
+    "subtitle": "Get in touch with us for any questions or support. We're here to help you 24/7.",
+    "getInTouch": "Get In Touch",
+    "sendMessage": "Send us a message",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Support Hours"
+    }
+  },
+  "auth": {
+    "selectLanguage": "Select Your Language",
+    "continue": "Continue",
+    "loginTitle": "Login to Your Account",
+    "loginSubtitle": "Enter your phone number to continue",
+    "phoneNumber": "Phone Number",
+    "sendOTP": "Send OTP",
+    "verifyOTP": "Verify OTP",
+    "otpSent": "OTP sent to {{phone}}"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "popular": "Popular"
+  },
+  "videoCall": {
+    "title": "Video Consultation",
+    "appointmentId": "Appointment ID: {{id}}",
+    "patientInfo": "Patient Information",
+    "chatTitle": "Chat",
+    "endCall": "End Call",
+    "mute": "Mute",
+    "video": "Video",
+    "screen": "Screen Share"
+  },
+  "languageSelect": {
+    "appTitle": "Gramin Swasthya",
+    "instruction": "Please select your preferred language and interaction mode",
+    "instructionHindi": "Please select your preferred language and interaction mode",
+    "selectLanguage": "Select Language",
+    "interactionMode": "Interaction Mode",
+    "modes": {
+      "voiceText": {
+        "name": "Voice + Text",
+        "description": "For users who can read and write",
+        "suitable": "Best for literate users"
+      },
+      "voiceOnly": {
+        "name": "Voice Only",
+        "description": "Audio-only interactions",
+        "suitable": "Perfect for illiterate users"
+      }
+    },
+    "voiceOnlyFeatures": {
+      "title": "Voice Only Mode Features:",
+      "audioInteractions": "All interactions through audio",
+      "audioInstructions": "Audio instructions and responses",
+      "voiceNavigation": "Voice-guided navigation",
+      "perfectForIlliterate": "Perfect for users who cannot read"
+    },
+    "pleaseSelectLanguage": "Please select a language",
+    "continue": "Continue",
+    "selected": "Selected"
+  },
+  "login": {
+    "title": "Patient Login",
+    "subtitle": "Secure authentication through Aadhar number",
+    "aadharNumber": "Aadhar Number",
+    "placeholder": "Enter 12-digit Aadhar number",
+    "validation": {
+      "digits": "12 digits required",
+      "numbersOnly": "Numbers only"
+    },
+    "errors": {
+      "invalidAadhar": "Please enter a valid Aadhar number",
+      "authFailed": "Authentication failed. Please try again."
+    },
+    "voiceInputActivated": "🔊 Voice input activated. Speak your Aadhar number clearly.",
+    "verifying": "Verifying...",
+    "loginButton": "Login",
+    "demo": {
+      "title": "Demo Info:",
+      "description": "This is a prototype. Any 12-digit number will work for login.",
+      "sampleAadhar": "Sample Aadhar:"
+    },
+    "privacy": {
+      "secure": "Your Aadhar information is secure and encrypted"
+    },
+    "changeLanguage": "Change Language"
+  },
+  "footer": {
+    "description": "Providing quality healthcare services across rural India through innovative telemedicine solutions.",
+    "quickLinks": "Quick Links",
+    "findDoctors": "Find Doctors",
+    "contactInfo": "Contact Info",
+    "phone": "+91 98765 43210",
+    "email": "info@healthcarepunjab.com",
+    "address": "Sector 17, Chandigarh, Punjab",
+    "allRightsReserved": "All rights reserved."
+  },
+  "howItWorks": {
+    "title": "How Gramin Swasthya Works",
+    "subtitle": "Getting quality healthcare has never been this simple. Follow these easy steps to start your telemedicine journey in rural India.",
+    "steps": {
+      "createAccount": {
+        "title": "Create Your Account",
+        "description": "Sign up with your basic information and medical history. It takes less than 5 minutes to get started."
+      },
+      "chooseDoctor": {
+        "title": "Choose Your Doctor",
+        "description": "Browse through our network of certified healthcare professionals and select the one that fits your needs."
+      },
+      "bookAppointment": {
+        "title": "Book Your Appointment",
+        "description": "Schedule your consultation at a time that works for you. Same-day appointments are often available."
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Join thousands of patients who have already experienced the convenience of telemedicine.",
+      "primary": "Start Your Consultation",
+      "secondary": "Learn More"
+    }
+  },
+  "aiSymptomChecker": {
+    "title": "AI Home Remedy Advisor",
+    "subtitle": "Get instant health insights with advanced AI technology powered symptom analysis",
+    "welcome": {
+      "greeting": "Welcome! I'm your AI health assistant 🤖",
+      "description": "Describe your symptoms in your preferred language, and I'll suggest traditional home remedies and wellness tips."
+    },
+    "features": {
+      "accurate": "Accurate symptom analysis using advanced AI",
+      "natural": "Natural home remedies from traditional medicine",
+      "instant": "Instant results in your preferred language"
+    },
+    "startAnalysis": "Start Health Analysis",
+    "input": {
+      "title": "How would you like to describe your symptoms?",
+      "typeSymptoms": "Type Your Symptoms",
+      "voiceInput": "Voice Input",
+      "placeholder": "Describe your symptoms here... (e.g., I have a headache and feeling tired)"
+    },
+    "welcomeSection": {
+      "greeting": "Welcome! I'm your AI health assistant 🤖",
+      "description": "Describe your symptoms in your preferred language, and I'll suggest traditional home remedies and wellness tips.",
+      "languages": "English, Hindi & Punjabi Support"
+    },
+    "inputMethods": {
+      "title": "Choose Your Input Method",
+      "voice": "Voice Input",
+      "voiceDescription": "Speak your symptoms naturally",
+      "text": "Text Input",
+      "textDescription": "Type your symptoms"
+    },
+    "voiceInput": {
+      "listening": "🎤 Listening... Speak now",
+      "processing": "Processing your voice...",
+      "notSupported": "Speech recognition not supported",
+      "errorMessage": "Speech recognition error occurred"
+    },
+    "textInput": {
+      "placeholder": "Describe your symptoms here... (e.g., I have a headache and feeling tired)",
+      "minLength": "Please describe your symptoms (minimum 10 characters)"
+    },
+    "analysisStages": {
+      "analyzing": "🔍 Analyzing your symptoms...",
+      "searching": "📚 Searching remedy database...",
+      "generating": "💡 Generating personalized suggestions..."
+    },
+    "results": {
+      "title": "AI Analysis & Home Remedy Suggestions",
+      "disclaimer": "⚠️ Disclaimer: These traditional home remedies are for informational purposes only. For serious symptoms or persistent issues, please consult with a healthcare professional.",
+      "actions": {
+        "newAnalysis": "🔄 New Analysis",
+        "consultDoctor": "👨‍⚕️ Consult Doctor",
+        "backToHome": "← Back to Home"
+      }
+    },
+    "fallback": {
+      "quickSuggestion": "Quick Home Remedy Suggestion",
+      "commonCold": "Common Cold",
+      "symptoms": "Symptoms",
+      "coldSymptoms": "Runny nose, sneezing, sore throat, mild fever",
+      "homeRemedies": "Home Remedies (Indian)",
+      "remedy1": "Drink kadha (tulsi, ginger, black pepper, clove boiled in water).",
+      "remedy2": "Take warm haldi doodh (turmeric milk).",
+      "remedy3": "Inhale steam with ajwain (carom seeds)."
+    }
+  }
+}

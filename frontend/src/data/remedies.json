@@ -1,0 +1,64 @@
+{
+  "remedies": [
+    {
+      "id": "headache",
+      "symptoms": ["headache", "head pain", "migraine"],
+      "title": "Headache Relief",
+      "description": "Common headache remedies and when to seek medical help",
+      "remedies": [
+        "Rest in a quiet, dark room",
+        "Apply cold or warm compress to head",
+        "Stay hydrated - drink plenty of water",
+        "Try gentle neck and shoulder massage",
+        "Practice deep breathing exercises"
+      ],
+      "warning": "Consult doctor if headache persists for more than 24 hours",
+      "audioText": "For headache relief, rest in a quiet dark room, apply cold compress, drink plenty of water, and try gentle massage. See a doctor if pain persists."
+    },
+    {
+      "id": "fever",
+      "symptoms": ["fever", "high temperature", "body heat"],
+      "title": "Fever Management",
+      "description": "Basic fever care and monitoring",
+      "remedies": [
+        "Take paracetamol as per dosage",
+        "Use cold water sponging",
+        "Drink plenty of fluids",
+        "Rest and avoid heavy activities",
+        "Monitor temperature regularly"
+      ],
+      "warning": "Seek immediate medical help if fever exceeds 102°F or persists for 3+ days",
+      "audioText": "For fever, take paracetamol, use cold sponging, drink fluids, and rest. See doctor immediately if fever is very high or continues for days."
+    },
+    {
+      "id": "cough",
+      "symptoms": ["cough", "throat irritation", "dry cough"],
+      "title": "Cough Relief",
+      "description": "Natural remedies for cough relief",
+      "remedies": [
+        "Drink warm water with honey and lemon",
+        "Gargle with warm salt water",
+        "Stay hydrated throughout the day",
+        "Use steam inhalation",
+        "Avoid cold foods and drinks"
+      ],
+      "warning": "Consult doctor if cough persists for more than 2 weeks or has blood",
+      "audioText": "For cough, drink honey lemon water, gargle with salt water, take steam, and stay warm. See doctor if cough continues or has blood."
+    },
+    {
+      "id": "stomach_pain",
+      "symptoms": ["stomach pain", "abdominal pain", "belly ache"],
+      "title": "Stomach Pain Relief",
+      "description": "Common remedies for mild stomach discomfort",
+      "remedies": [
+        "Drink warm water or herbal tea",
+        "Apply warm compress to stomach",
+        "Eat light, bland foods (rice, banana)",
+        "Avoid spicy and oily foods",
+        "Rest in comfortable position"
+      ],
+      "warning": "Seek immediate help for severe pain, vomiting, or signs of infection",
+      "audioText": "For stomach pain, drink warm water, apply heat, eat simple foods like rice and banana. See doctor immediately for severe pain or vomiting."
+    }
+  ]
+}

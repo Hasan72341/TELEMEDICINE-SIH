@@ -1,0 +1,125 @@
+/* Video Call Styles */
+.video-call-container {
+  min-height: 100vh;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text);
+  position: relative;
+}
+
+/* Header section */
+.call-header {
+  background: var(--color-surface-muted);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appointment-id {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Main content area */
+.video-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+}
+
+/* Side panel */
+.side-panel {
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  height: fit-content;
+}
+
+.patient-info-card h3 {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary-600);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Chat section */
+.chat-header h3 {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-md);
+}
+
+.sender {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.9rem;
+}
+
+/* Video area */
+.video-container {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  position: relative;
+}
+
+/* Call controls */
+.call-controls {
+  background: var(--color-surface-muted);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.control-btn {
+  padding: var(--spacing-md);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+.primary-controls .control-btn.end-call {
+  background: var(--color-error);
+  color: var(--color-white);
+}
+
+.primary-controls .control-btn.end-call:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .video-main {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .side-panel {
+    order: -1;
+  }
+  
+  .call-controls {
+    padding: var(--spacing-md);
+  }
+}

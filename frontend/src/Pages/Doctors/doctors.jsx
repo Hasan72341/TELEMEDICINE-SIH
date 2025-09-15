@@ -1,48 +1,50 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import DoctorCard from "../../components/Cards/DoctorCard";
 import doctorsData from "../../data/doctors.json";
-import "./doctors.css";
+import "./Doctors.css";
 
 const Doctors = () => {
+  const { t } = useTranslation();
   const doctors = doctorsData.doctors;
 
   return (
     <MotionWrapper className="doctors-container" variant="container" stagger={true}>
       <div className="page-header">
-        <h1 className="page-title">Our Expert Doctors</h1>
-        <p className="page-subtitle">Connect with rural India's finest healthcare professionals from the comfort of your home</p>
+        <h1 className="page-title">{t('doctors.title')}</h1>
+        <p className="page-subtitle">{t('doctors.subtitle')}</p>
       </div>
 
       <div className="filters-section">
         <div className="filter-group">
-          <label>Specialty:</label>
+          <label>{t('doctors.filters.specialty.label')}</label>
           <select>
-            <option value="">All Specialties</option>
-            <option value="general">General Medicine</option>
-            <option value="cardiology">Cardiology</option>
-            <option value="pediatrics">Pediatrics</option>
-            <option value="dermatology">Dermatology</option>
-            <option value="mental-health">Mental Health</option>
-            <option value="orthopedics">Orthopedics</option>
+            <option value="">{t('doctors.filters.specialty.all')}</option>
+            <option value="general">{t('doctors.filters.specialty.general')}</option>
+            <option value="cardiology">{t('doctors.filters.specialty.cardiology')}</option>
+            <option value="pediatrics">{t('doctors.filters.specialty.pediatrics')}</option>
+            <option value="dermatology">{t('doctors.filters.specialty.dermatology')}</option>
+            <option value="mental-health">{t('doctors.filters.specialty.mentalHealth')}</option>
+            <option value="orthopedics">{t('doctors.filters.specialty.orthopedics')}</option>
           </select>
         </div>
         <div className="filter-group">
-          <label>Availability:</label>
+          <label>{t('doctors.filters.availability.label')}</label>
           <select>
-            <option value="">Any Time</option>
-            <option value="now">Available Now</option>
-            <option value="today">Today</option>
-            <option value="tomorrow">Tomorrow</option>
+            <option value="">{t('doctors.filters.availability.anytime')}</option>
+            <option value="now">{t('doctors.filters.availability.now')}</option>
+            <option value="today">{t('doctors.filters.availability.today')}</option>
+            <option value="tomorrow">{t('doctors.filters.availability.tomorrow')}</option>
           </select>
         </div>
         <div className="filter-group">
-          <label>Sort by:</label>
+          <label>{t('doctors.filters.sortBy.label')}</label>
           <select>
-            <option value="rating">Highest Rated</option>
-            <option value="experience">Most Experienced</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
+            <option value="rating">{t('doctors.filters.sortBy.rating')}</option>
+            <option value="experience">{t('doctors.filters.sortBy.experience')}</option>
+            <option value="price-low">{t('doctors.filters.sortBy.priceLow')}</option>
+            <option value="price-high">{t('doctors.filters.sortBy.priceHigh')}</option>
           </select>
         </div>
       </div>
@@ -55,9 +57,9 @@ const Doctors = () => {
 
       <div className="emergency-section">
         <div className="emergency-card">
-          <h2>🚨 Emergency Consultation</h2>
-          <p>Need immediate medical attention? Connect with our emergency doctors instantly.</p>
-          <button className="emergency-btn">Get Emergency Help</button>
+          <h2>🚨 {t('doctors.emergency.title')}</h2>
+          <p>{t('doctors.emergency.description')}</p>
+          <button className="emergency-btn">{t('doctors.emergency.button')}</button>
         </div>
       </div>
     </MotionWrapper>

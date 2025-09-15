@@ -102,7 +102,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+  box-shadow: var(--focus-ring);
 }
 
 .form-group textarea {
@@ -112,7 +112,7 @@
 
 .submit-btn {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-white);
   border: 1px solid transparent;
   padding: 1rem 2rem;
   border-radius: 8px;

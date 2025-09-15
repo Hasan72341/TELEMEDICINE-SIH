@@ -1,64 +1,101 @@
 {
   "doctors": [
     {
-      "id": 1,
-      "name": "Dr. Preet Kaur Singh",
-      "specialty": "General Medicine",
+      "id": "dr_sharma",
+      "name": "Dr. Rajesh Sharma",
+      "qualification": "MBBS, MD (General Medicine)",
+      "specialization": "General Physician",
       "experience": "15 years",
-      "rating": 4.9,
-      "image": "👩‍⚕️",
-      "availability": "Available Now",
-      "price": "₹3"
-    },
-    {
-      "id": 2,
-      "name": "Dr. Rajesh Kumar Sharma",
-      "specialty": "Cardiologist",
-      "experience": "12 years",
       "rating": 4.8,
+      "consultationFee": 200,
+      "languages": ["Hindi", "English", "Punjabi"],
+      "available": true,
       "image": "👨‍⚕️",
-      "availability": "Available in 30 mins",
-      "price": "₹5"
+      "description": "Experienced in treating common ailments, fever, cold, and general health issues."
     },
     {
-      "id": 3,
-      "name": "Dr. Simran Bhatia",
-      "specialty": "Pediatrician",
-      "experience": "10 years",
+      "id": "dr_priya",
+      "name": "Dr. Priya Gupta",
+      "qualification": "MBBS, MD (Pediatrics)",
+      "specialization": "Child Specialist",
+      "experience": "12 years",
       "rating": 4.9,
+      "consultationFee": 250,
+      "languages": ["Hindi", "English"],
+      "available": true,
       "image": "👩‍⚕️",
-      "availability": "Available Now",
-      "price": "₹4"
+      "description": "Specialist in child healthcare, vaccination, and growth monitoring."
     },
     {
-      "id": 4,
-      "name": "Dr. Amarjeet Singh Gill",
-      "specialty": "Dermatologist",
+      "id": "dr_kumar",
+      "name": "Dr. Amit Kumar",
+      "qualification": "MBBS, MS (Surgery)",
+      "specialization": "General Surgeon",
       "experience": "18 years",
       "rating": 4.7,
+      "consultationFee": 300,
+      "languages": ["Hindi", "English"],
+      "available": false,
       "image": "👨‍⚕️",
-      "availability": "Available in 1 hour",
-      "price": "₹4"
+      "description": "Expert in general surgery and emergency medical procedures."
     },
     {
-      "id": 5,
-      "name": "Dr. Manpreet Kaur Dhillon",
-      "specialty": "Psychiatrist",
-      "experience": "8 years",
-      "rating": 4.9,
-      "image": "👩‍⚕️",
-      "availability": "Available Now",
-      "price": "₹6"
-    },
-    {
-      "id": 6,
-      "name": "Dr. Hardeep Singh Brar",
-      "specialty": "Orthopedist",
+      "id": "dr_singh",
+      "name": "Dr. Manpreet Singh",
+      "qualification": "MBBS, DM (Cardiology)",
+      "specialization": "Heart Specialist",
       "experience": "20 years",
-      "rating": 4.8,
+      "rating": 4.9,
+      "consultationFee": 400,
+      "languages": ["Hindi", "English", "Punjabi"],
+      "available": true,
       "image": "👨‍⚕️",
-      "availability": "Available Tomorrow",
-      "price": "₹5"
+      "description": "Cardiologist specializing in heart diseases and blood pressure management."
+    },
+    {
+      "id": "dr_kaur",
+      "name": "Dr. Simran Kaur",
+      "qualification": "MBBS, MD (Gynecology)",
+      "specialization": "Women's Health",
+      "experience": "14 years",
+      "rating": 4.8,
+      "consultationFee": 280,
+      "languages": ["Hindi", "English", "Punjabi"],
+      "available": true,
+      "image": "👩‍⚕️",
+      "description": "Specialist in women's health, pregnancy care, and reproductive health."
+    }
+  ],
+  "categories": [
+    {
+      "id": "general",
+      "name": "General Physician",
+      "icon": "🩺",
+      "description": "Common health issues, fever, cold, general checkup"
+    },
+    {
+      "id": "pediatric",
+      "name": "Child Specialist",
+      "icon": "��",
+      "description": "Child healthcare, vaccination, growth monitoring"
+    },
+    {
+      "id": "surgery",
+      "name": "General Surgeon",
+      "icon": "⚕️",
+      "description": "Surgical procedures and emergency care"
+    },
+    {
+      "id": "cardiology",
+      "name": "Heart Specialist",
+      "icon": "❤️",
+      "description": "Heart diseases, blood pressure, cardiac care"
+    },
+    {
+      "id": "gynecology",
+      "name": "Women's Health",
+      "icon": "👩‍⚕️",
+      "description": "Women's health, pregnancy, reproductive care"
     }
   ]
 }

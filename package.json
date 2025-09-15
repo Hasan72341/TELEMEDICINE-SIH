@@ -1,0 +1,28 @@
+{
+  "name": "telemedicine-sih",
+  "version": "1.0.0",
+  "description": "Telemedicine platform for rural healthcare in India with multilingual support (Punjabi, Hindi, English)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "start": "cd frontend && npm run preview"
+  },
+  "keywords": [
+    "telemedicine",
+    "healthcare",
+    "rural-india",
+    "punjabi",
+    "hindi",
+    "multilingual",
+    "react",
+    "vite"
+  ],
+  "author": "SIH Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hasan72341/TELEMEDICINE-SIH.git"
+  }
+}
