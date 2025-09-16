@@ -193,7 +193,6 @@
   "languageSelect": {
     "appTitle": "ਗ੍ਰਾਮੀਣ ਸਿਹਤ",
     "instruction": "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਪਸੰਦੀਦਾ ਭਾਸ਼ਾ ਅਤੇ ਗੱਲਬਾਤ ਦਾ ਤਰੀਕਾ ਚੁਣੋ",
-    "instructionHindi": "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਪਸੰਦੀਦਾ ਭਾਸ਼ਾ ਅਤੇ ਗੱਲਬਾਤ ਦਾ ਤਰੀਕਾ ਚੁਣੋ",
     "selectLanguage": "ਭਾਸ਼ਾ ਚੁਣੋ",
     "interactionMode": "ਗੱਲਬਾਤ ਦਾ ਤਰੀਕਾ",
     "modes": {

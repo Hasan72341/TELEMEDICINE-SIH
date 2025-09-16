@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
 import remediesData from '../../data/remedies.json';
-import "./SymptomChecker.css";
+import "./symptomchecker.css";
 
 const SymptomChecker = () => {
   const navigate = useNavigate();

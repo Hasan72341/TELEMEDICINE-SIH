@@ -8,19 +8,19 @@ import MainLayout from '../layouts/MainLayout';
 // Pages - Existing  
 import Home from "../Pages/Home/home";
 import Doctors from "../Pages/Doctors/doctors";
-import Contact from "../Pages/Contact/Contact";
+import Contact from "../Pages/Contact/contact";
 import HowItWorks from "../Pages/HowItWorks/howitworks";
 
 // Pages - New Features
-import LanguageSelect from '../Pages/LanguageSelect/LanguageSelect';
-import Login from '../Pages/Login/Login';
-import NewHome from '../Pages/Home/NewHome';
-import SymptomChecker from '../Pages/SymptomChecker/SymptomChecker';
-import AISymptomChecker from '../Pages/AISymptomChecker/AISymptomChecker';
-import Consultation from '../Pages/Consultation/Consultation';
-import VideoCall from '../Pages/VideoCall/VideoCall';
-import ConsultationSummary from '../Pages/ConsultationSummary/ConsultationSummary';
-import Shop from '../Pages/Shop/Shop';
+import LanguageSelect from '../Pages/LanguageSelect/languageselect';
+import Login from '../Pages/Login/login';
+import NewHome from '../Pages/Home/newhome';
+import SymptomChecker from '../Pages/SymptomChecker/symptomchecker';
+import AISymptomChecker from '../Pages/AISymptomChecker/aisymptomchecker';
+import Consultation from '../Pages/Consultation/consultation';
+import VideoCall from '../Pages/VideoCall/videocall';
+import ConsultationSummary from '../Pages/ConsultationSummary/consultationsummary';
+import Shop from '../Pages/Shop/shop';
 
 // Components
 import AuthRedirect from '../components/AuthRedirect/AuthRedirect';

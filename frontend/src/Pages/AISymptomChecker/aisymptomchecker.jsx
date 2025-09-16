@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
-import "./AISymptomChecker.css";
+import "./aisymptomchecker.css";
 
 const AISymptomChecker = () => {
   const navigate = useNavigate();

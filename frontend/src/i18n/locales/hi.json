@@ -193,7 +193,6 @@
   "languageSelect": {
     "appTitle": "ग्रामीण स्वास्थ्य",
     "instruction": "कृपया अपनी पसंदीदा भाषा और बातचीत का तरीका चुनें",
-    "instructionHindi": "कृपया अपनी पसंदीदा भाषा और बातचीत का तरीका चुनें",
     "selectLanguage": "भाषा चुनें",
     "interactionMode": "बातचीत का तरीका",
     "modes": {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
-import "./Contact.css";
+import "./contact.css";
 
 const Contact = () => {
   const { t } = useTranslation();

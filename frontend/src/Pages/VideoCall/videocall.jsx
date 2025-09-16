@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
 import doctorsData from '../../data/doctors.json';
-import "./VideoCall.css";
+import "./videocall.css";
 
 const VideoCall = () => {
   const navigate = useNavigate();

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
-import './LanguageSelect.css';
+import 'import "./languageselect.css";';
 
 const LanguageSelect = () => {
   const navigate = useNavigate();
@@ -70,7 +70,6 @@ const LanguageSelect = () => {
         <h1>🏥 {t('languageSelect.appTitle')}</h1>
         <h2>Gramin Swasthya</h2>
         <p>{t('languageSelect.instruction')}</p>
-        <p>{t('languageSelect.instructionHindi')}</p>
       </div>
 
       {/* Language Selection */}

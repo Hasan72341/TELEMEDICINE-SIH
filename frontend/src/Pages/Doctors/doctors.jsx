@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import DoctorCard from "../../components/Cards/DoctorCard";
 import doctorsData from "../../data/doctors.json";
-import "./Doctors.css";
+import "./doctors.css";
 
 const Doctors = () => {
   const { t } = useTranslation();

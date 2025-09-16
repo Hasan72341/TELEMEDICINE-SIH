@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
 import doctorsData from '../../data/doctors.json';
 import slotsData from '../../data/slots.json';
-import "./Consultation.css";
+import "./consultation.css";
 
 const Consultation = () => {
   const navigate = useNavigate();

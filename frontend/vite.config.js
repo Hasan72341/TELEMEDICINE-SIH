@@ -30,4 +30,8 @@ export default defineConfig({
       }
     })
   ],
+  server: {
+    host: true, // Allow access from network
+    port: 5173
+  }
 })

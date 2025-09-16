@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
-import "./ConsultationSummary.css";
+import "./consultationsummary.css";
 
 const ConsultationSummary = () => {
   const navigate = useNavigate();

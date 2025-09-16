@@ -193,7 +193,6 @@
   "languageSelect": {
     "appTitle": "Gramin Swasthya",
     "instruction": "Please select your preferred language and interaction mode",
-    "instructionHindi": "Please select your preferred language and interaction mode",
     "selectLanguage": "Select Language",
     "interactionMode": "Interaction Mode",
     "modes": {

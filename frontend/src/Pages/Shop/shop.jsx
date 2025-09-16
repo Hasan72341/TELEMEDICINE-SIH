@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
 import shopData from '../../data/shop.json';
-import "./Shop.css";
+import "./shop.css";
 
 const Shop = () => {
   const navigate = useNavigate();
