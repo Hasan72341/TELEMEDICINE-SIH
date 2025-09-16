@@ -14,7 +14,16 @@
     "welcomeTitle": "Welcome to Rural Health Platform",
     "welcomeSubtitle": "Your health is our priority - Accessible healthcare for everyone",
     "mainServices": "Main Services",
-    "quickActions": "Quick Actions",
+    "quickActions": {
+      "title": "Quick Actions",
+      "subtitle": "Fast access to essential health services",
+      "emergency": "Emergency",
+      "emergencyDesc": "Connect to emergency services",
+      "healthRecords": "My Health",
+      "healthRecordsDesc": "View your health records",
+      "prescriptions": "Prescriptions",
+      "prescriptionsDesc": "View past prescriptions"
+    },
     "healthTipTitle": "Today's Health Tip",
     "healthTip": "Drink at least 8 glasses of water daily for good health.",
     "healthTipHindi": "Stay hydrated for good health.",
@@ -25,7 +34,17 @@
       "buyMedicine": "Buy Medicine - Open medicine shop",
       "emergencyHelp": "Emergency Help - Connect to emergency services"
     },
+    "medicineShop": {
+      "title": "Medicine Shop",
+      "subtitle": "Order medicines online with home delivery",
+      "freeDelivery": "Free Home Delivery",
+      "prescription": "Prescription Verification",
+      "bestPrice": "Best Prices",
+      "janAushadhi": "Jan Aushadhi Partner",
+      "shopNow": "Shop Medicines Now"
+    },
     "features": {
+      "title": "Why Choose Gramin Swasthya?",
       "howItWorks": {
         "title": "How It Works",
         "description": "Learn how to use our telemedicine platform step by step"
@@ -51,11 +70,10 @@
       "myHealth": {
         "title": "My Health",
         "description": "View your health records"
-      },
-      "prescriptions": {
-        "title": "Prescriptions",
-        "description": "View past prescriptions"
       }
+    },
+    "services": {
+      "title": "Our Services"
     }
   },
   "doctors": {
@@ -78,23 +96,46 @@
         "cardiology": "Cardiology",
         "pediatrics": "Pediatrics",
         "dermatology": "Dermatology",
-        "mentalHealth": "Mental Health",
         "orthopedics": "Orthopedics"
       },
       "availability": {
         "label": "Availability:",
         "anytime": "Anytime",
-        "now": "Available Now",
-        "today": "Today",
-        "tomorrow": "Tomorrow"
+        "available": "Available Now",
+        "busy": "Currently Busy"
       },
       "sortBy": {
         "label": "Sort By:",
         "rating": "Highest Rated",
         "experience": "Most Experienced",
         "priceLow": "Price: Low to High",
-        "priceHigh": "Price: High to Low"
-      }
+        "priceHigh": "Price: High to Low",
+        "name": "Name (A-Z)"
+      },
+      "clearAll": "Clear All Filters",
+      "search": "Search"
+    },
+    "search": {
+      "placeholder": "Search doctors by name, specialty, or language..."
+    },
+    "results": {
+      "showing": "Showing",
+      "outOf": "out of",
+      "doctors": "doctors"
+    },
+    "noResults": {
+      "title": "No doctors found",
+      "message": "Try adjusting your search criteria or clearing filters to see more results.",
+      "clearFilters": "Clear All Filters"
+    },
+    "status": {
+      "available": "Available",
+      "busy": "Busy"
+    },
+    "card": {
+      "experience": "experience",
+      "consultation": "consultation",
+      "bookAppointment": "Book Appointment"
     },
     "emergency": {
       "title": "Emergency Consultation",
@@ -124,10 +165,13 @@
     "title": "Medicine Shop",
     "subtitle": "Order medicines with home delivery",
     "categories": {
-      "all": "All",
+      "all": "All Medicines",
       "pain": "Pain Relief",
-      "cold": "Cold & Flu",
-      "digestive": "Digestive",
+      "cold": "Fever & Cold",
+      "digestive": "Stomach Care",
+      "vitamins": "Vitamins",
+      "firstAid": "First Aid",
+      "chronic": "Chronic Care",
       "skincare": "Skincare"
     },
     "addToCart": "Add to Cart",
@@ -291,11 +335,16 @@
       "instant": "Instant results in your preferred language"
     },
     "startAnalysis": "Start Health Analysis",
+    "symptoms": "Symptoms",
+    "continueAnalysis": "Continue Analysis",
     "input": {
       "title": "How would you like to describe your symptoms?",
       "typeSymptoms": "Type Your Symptoms",
       "voiceInput": "Voice Input",
-      "placeholder": "Describe your symptoms here... (e.g., I have a headache and feeling tired)"
+      "placeholder": "Describe your symptoms here... (e.g., I have a headache and feeling tired)",
+      "youSaid": "You said",
+      "clickToSpeak": "🎤 Click to speak",
+      "listening": "🎤 Listening... Speak now"
     },
     "welcomeSection": {
       "greeting": "Welcome! I'm your AI health assistant 🤖",
@@ -327,11 +376,71 @@
     "results": {
       "title": "AI Analysis & Home Remedy Suggestions",
       "disclaimer": "⚠️ Disclaimer: These traditional home remedies are for informational purposes only. For serious symptoms or persistent issues, please consult with a healthcare professional.",
+      "confidenceLevel": "Confidence Level",
+      "assistantSays": "AI Assistant Says:",
+      "newAnalysis": "New Analysis",
+      "bookConsultation": "Book Consultation",
+      "getNaturalRemedies": "Get Natural Remedies",
       "actions": {
         "newAnalysis": "🔄 New Analysis",
         "consultDoctor": "👨‍⚕️ Consult Doctor",
         "backToHome": "← Back to Home"
       }
+    },
+    "questions": {
+      "duration": {
+        "question": "How long have you been experiencing these symptoms?",
+        "options": {
+          "fewHours": "A few hours",
+          "oneDay": "About a day",
+          "twoDays": "2-3 days",
+          "week": "A week or more"
+        }
+      },
+      "severity": {
+        "question": "How would you rate the severity of your symptoms?",
+        "options": {
+          "mild": "Mild",
+          "moderate": "Moderate",
+          "severe": "Severe"
+        }
+      }
+    },
+    "defaultResponse": "Based on your symptoms, I recommend consulting with a healthcare professional for proper diagnosis and treatment.",
+    "analysis": {
+      "title": "Analysis in Progress",
+      "complete": "Complete",
+      "stages": {
+        "analyzing": "Analyzing",
+        "searching": "Searching", 
+        "generating": "Generating",
+        "finalizing": "Finalizing"
+      }
+    },
+    "disclaimer": {
+      "title": "Important Disclaimer:",
+      "text": "This AI assistant provides only informational and general home remedy suggestions. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a healthcare professional for serious or persistent symptoms."
+    },
+    "sampleResponse": {
+      "symptomsLabel": "Symptoms",
+      "homeRemediesLabel": "Home Remedies",
+      "headache": {
+        "condition": "Headache",
+        "symptoms": "Pain in head, heaviness",
+        "remedies": {
+          "remedy1": "Drink plenty of water (dehydration often causes headache).",
+          "remedy2": "Apply pudina (mint) paste on forehead.",
+          "remedy3": "Inhale steam with eucalyptus oil or ajwain."
+        }
+      }
+    },
+    "question": "Question",
+    "of": "of",
+    "progress": {
+      "question": "Question",
+      "of": "of",
+      "step": "Step",
+      "complete": "Complete"
     },
     "fallback": {
       "quickSuggestion": "Quick Home Remedy Suggestion",
@@ -342,6 +451,11 @@
       "remedy1": "Drink kadha (tulsi, ginger, black pepper, clove boiled in water).",
       "remedy2": "Take warm haldi doodh (turmeric milk).",
       "remedy3": "Inhale steam with ajwain (carom seeds)."
+    },
+    "common": {
+      "learnMore": "Learn More",
+      "service": "Service",
+      "serviceDescription": "Service Description"
     }
   }
 }

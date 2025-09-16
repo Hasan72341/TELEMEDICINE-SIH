@@ -43,7 +43,7 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo" onClick={closeMenu}>
+        <Link to="/home" className="navbar-logo" onClick={closeMenu}>
           <span className="logo-icon">🏥</span>
           <span className="logo-text">Gramin Swasthya</span>
         </Link>
@@ -55,8 +55,8 @@ const NavBar = () => {
           aria-hidden={!isMenuOpen}
         >
           <Link
-            to="/"
-            className={`navbar-link ${isActiveLink("/") ? "active" : ""}`}
+            to="/home"
+            className={`navbar-link ${isActiveLink("/home") ? "active" : ""}`}
             onClick={closeMenu}
           >
             {t('navigation.home')}

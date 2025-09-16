@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
 import shopData from '../../data/shop.json';
-import "./shop.css";
+import "./Shop.css";
 
 const Shop = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [userAuth, setUserAuth] = useState(null);
   const [userPrefs, setUserPrefs] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -35,13 +37,13 @@ const Shop = () => {
   }, [navigate]);
 
   const categories = [
-    { id: 'all', name: 'All Medicines', icon: '💊' },
-    { id: 'pain-relief', name: 'Pain Relief', icon: '🩹' },
-    { id: 'fever', name: 'Fever & Cold', icon: '🤒' },
-    { id: 'stomach', name: 'Stomach Care', icon: '🫃' },
-    { id: 'vitamins', name: 'Vitamins', icon: '💪' },
-    { id: 'first-aid', name: 'First Aid', icon: '🏥' },
-    { id: 'chronic', name: 'Chronic Care', icon: '⚕️' }
+    { id: 'all', nameKey: 'shop.categories.all', name: 'All Medicines', icon: '💊' },
+    { id: 'pain-relief', nameKey: 'shop.categories.pain', name: 'Pain Relief', icon: '🩹' },
+    { id: 'fever', nameKey: 'shop.categories.cold', name: 'Fever & Cold', icon: '🤒' },
+    { id: 'stomach', nameKey: 'shop.categories.digestive', name: 'Stomach Care', icon: '🫃' },
+    { id: 'vitamins', nameKey: 'shop.categories.vitamins', name: 'Vitamins', icon: '💪' },
+    { id: 'first-aid', nameKey: 'shop.categories.firstAid', name: 'First Aid', icon: '🏥' },
+    { id: 'chronic', nameKey: 'shop.categories.chronic', name: 'Chronic Care', icon: '⚕️' }
   ];
 
   const filteredMedicines = shopData.medicines.filter(medicine => {
@@ -175,7 +177,7 @@ const Shop = () => {
                   className={`category-btn ${selectedCategory === category.id ? 'active' : ''}`}
                   onClick={() => setSelectedCategory(category.id)}
                 >
-                  {category.icon} {category.name}
+                  {category.icon} {t(category.nameKey, category.name)}
                 </button>
               ))}
             </div>
@@ -197,11 +199,19 @@ const Shop = () => {
                   <p className="generic-name">{medicine.genericName}</p>
                   <p className="manufacturer">by {medicine.manufacturer}</p>
                   
+                  <div className="medicine-rating">
+                    <span className="rating-stars">⭐ {medicine.rating}</span>
+                    <span>({medicine.reviews} reviews)</span>
+                  </div>
+                  
                   <div className="medicine-details">
                     <div className="price">
                       <span className="current-price">₹{medicine.price}</span>
                       {medicine.originalPrice && (
-                        <span className="original-price">₹{medicine.originalPrice}</span>
+                        <>
+                          <span className="original-price">₹{medicine.originalPrice}</span>
+                          <span className="discount-badge">{medicine.discount}% OFF</span>
+                        </>
                       )}
                     </div>
                     
@@ -218,6 +228,10 @@ const Shop = () => {
                     <span className="dosage">💊 {medicine.dosage}</span>
                     <span className="pack-size">📦 {medicine.packSize}</span>
                   </div>
+                  
+                  {medicine.fastDelivery && (
+                    <div className="fast-delivery">⚡ Fast Delivery Available</div>
+                  )}
 
                   <div className="medicine-actions">
                     {cart.find(item => item.id === medicine.id) ? (

@@ -23,7 +23,19 @@ const AISymptomChecker = () => {
   useEffect(() => {
     const prefs = JSON.parse(localStorage.getItem('userPrefs') || '{}');
     setUserPrefs(prefs);
+    
+    // Clear any invalid symptoms that might be lingering from previous sessions
+    if (symptoms === 'cd' || symptoms.length < 3) {
+      setSymptoms('');
+    }
   }, []);
+
+  // Clear symptoms if they contain invalid content
+  useEffect(() => {
+    if (symptoms === 'cd' || (symptoms.length > 0 && symptoms.length < 3 && !symptoms.match(/[a-zA-Z\u0900-\u097F\u0A00-\u0A7F]/))) {
+      setSymptoms('');
+    }
+  }, [symptoms]);
 
   // Quick select removed
 
@@ -150,18 +162,24 @@ const AISymptomChecker = () => {
   };
 
   const generateAIResponse = () => {
-    // Always return the exact Headache response provided by user
-    const specificResponse = `Headache
+    // Generate multilingual response based on current language
+    const headacheResponse = {
+      condition: t('aiSymptomChecker.sampleResponse.headache.condition'),
+      symptoms: t('aiSymptomChecker.sampleResponse.headache.symptoms'),
+      homeRemedies: [
+        t('aiSymptomChecker.sampleResponse.headache.remedies.remedy1'),
+        t('aiSymptomChecker.sampleResponse.headache.remedies.remedy2'),
+        t('aiSymptomChecker.sampleResponse.headache.remedies.remedy3')
+      ]
+    };
 
-Symptoms: Pain in head, heaviness.
+    const specificResponse = `${headacheResponse.condition}
 
-Home Remedies:
+${t('aiSymptomChecker.sampleResponse.symptomsLabel')}: ${headacheResponse.symptoms}
 
-Drink plenty of water (dehydration often causes headache).
+${t('aiSymptomChecker.sampleResponse.homeRemediesLabel')}:
 
-Apply pudina (mint) paste on forehead.
-
-Inhale steam with eucalyptus oil or ajwain.`;
+${headacheResponse.homeRemedies.join('\n\n')}`;
 
     setAiResponse(specificResponse);
   };

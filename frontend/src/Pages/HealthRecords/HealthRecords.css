@@ -1,0 +1,793 @@
+/* ====== HEALTH RECORDS - ORANGE THEME ====== */
+.health-records-container {
+  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, rgba(255, 152, 0, 0.9) 0%, rgba(255, 87, 34, 0.9) 100%), 
+    url('/background.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  color: var(--color-text);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.health-records-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, rgba(255, 152, 0, 0.05) 0%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 193, 7, 0.05) 0%, transparent 25%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundPulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundPulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+/* ====== LOADING STATE ====== */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(59, 130, 246, 0.1);
+  border-left: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ====== HEADER SECTION ====== */
+.health-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text);
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(-5px);
+}
+
+.header-content {
+  flex: 1;
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.025em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header-content p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.health-status {
+  flex-shrink: 0;
+}
+
+.status-indicator {
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== PATIENT INFO CARD ====== */
+.patient-info-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 25px;
+  align-items: center;
+}
+
+.patient-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.patient-details h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+.patient-meta {
+  display: flex;
+  gap: 20px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.emergency-contact {
+  text-align: right;
+}
+
+.emergency-contact h4 {
+  color: #ef4444;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.emergency-contact p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ====== NAVIGATION TABS ====== */
+.health-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  padding: 5px;
+}
+
+.health-tab {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-muted);
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  min-width: fit-content;
+}
+
+.health-tab:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-text);
+}
+
+.health-tab.active {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.tab-icon {
+  font-size: 16px;
+}
+
+.tab-label {
+  font-weight: 500;
+}
+
+/* ====== TAB CONTENT ====== */
+.tab-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  min-height: 500px;
+}
+
+/* ====== OVERVIEW SECTION ====== */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.overview-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.overview-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--color-text);
+}
+
+.vitals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vital-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vital-value {
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.vital-value.normal {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.vital-value.high {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.conditions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.condition-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.condition-status {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.condition-status.controlled {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.condition-status.under-treatment {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.medications-count {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.med-count {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 5px;
+}
+
+.recent-meds {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.med-item {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.recent-visit {
+  margin-bottom: 15px;
+}
+
+.visit-date {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 5px;
+}
+
+.visit-doctor {
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.visit-type {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.next-appointment {
+  padding: 10px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  color: #3b82f6;
+  text-align: center;
+}
+
+/* ====== VITALS SECTION ====== */
+.vitals-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.vitals-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.vital-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.vital-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.vital-name {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.vital-card .vital-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.vital-trend {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.trend-normal {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.trend-up {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* ====== MEDICATIONS SECTION ====== */
+.medications-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.medications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.medication-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.medication-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.med-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.med-header h4 {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.med-purpose {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.med-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.med-schedule, .med-prescriber {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* ====== HISTORY SECTION ====== */
+.history-category {
+  margin-bottom: 40px;
+}
+
+.history-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+.conditions-grid, .allergies-list, .surgeries-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.condition-card, .allergy-card, .surgery-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.condition-card:hover, .allergy-card:hover, .surgery-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.condition-header, .allergy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.severity {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.severity.mild {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.severity.moderate {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.severity.severe {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* ====== REPORTS SECTION ====== */
+.reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.report-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.report-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+
+.status.completed {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.test-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.test-result {
+  font-weight: 500;
+}
+
+/* ====== VISITS SECTION ====== */
+.visits-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.visit-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.visit-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.visit-date-badge {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.9rem;
+  width: fit-content;
+  height: fit-content;
+}
+
+.visit-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.visit-header h4 {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.visit-specialty {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.visit-type {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.visit-type.video-consultation {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.visit-type.in-person {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.visit-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.diagnosis, .treatment, .next-appointment {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+  .health-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .patient-info-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .emergency-contact {
+    text-align: center;
+  }
+  
+  .health-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vitals-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .med-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .conditions-grid, .allergies-list, .surgeries-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .test-results {
+    grid-template-columns: 1fr;
+  }
+  
+  .visit-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .visit-header {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .health-records-container {
+    padding: 15px;
+  }
+  
+  .tab-content {
+    padding: 20px;
+  }
+  
+  .patient-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .health-tabs {
+    gap: 5px;
+  }
+  
+  .health-tab {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .tab-label {
+    display: none;
+  }
+}

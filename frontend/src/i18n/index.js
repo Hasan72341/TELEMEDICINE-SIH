@@ -3,20 +3,20 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Import translation files
-import enTranslations from './locales/en.json';
-import hiTranslations from './locales/hi.json';
-import paTranslations from './locales/pa.json';
+import en from './locales/en.json';
+import hi from './locales/hi.json';
+import pa from './locales/pa.json';
 
 const resources = {
   en: {
-    translation: enTranslations
+    translation: en,
   },
   hi: {
-    translation: hiTranslations
+    translation: hi,
   },
   pa: {
-    translation: paTranslations
-  }
+    translation: pa,
+  },
 };
 
 i18n
@@ -24,7 +24,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'pa', // Punjabi as primary fallback language
+    fallbackLng: 'pa', // Punjabi as priority/default
+    lng: 'pa', // Default to Punjabi
     debug: false,
 
     interpolation: {

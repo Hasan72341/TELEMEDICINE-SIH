@@ -14,13 +14,15 @@ import HowItWorks from "../Pages/HowItWorks/howitworks";
 // Pages - New Features
 import LanguageSelect from '../Pages/LanguageSelect/languageselect';
 import Login from '../Pages/Login/login';
-import NewHome from '../Pages/Home/newhome';
+import NewHome from '../Pages/Home/NewHome';
 import SymptomChecker from '../Pages/SymptomChecker/symptomchecker';
-import AISymptomChecker from '../Pages/AISymptomChecker/aisymptomchecker';
+import AISymptomChecker from '../Pages/AISymptomChecker/AISymptomChecker';
 import Consultation from '../Pages/Consultation/consultation';
 import VideoCall from '../Pages/VideoCall/videocall';
 import ConsultationSummary from '../Pages/ConsultationSummary/consultationsummary';
 import Shop from '../Pages/Shop/shop';
+import HealthRecords from '../Pages/HealthRecords/HealthRecords';
+import Prescriptions from '../Pages/Prescriptions/Prescriptions';
 
 // Components
 import AuthRedirect from '../components/AuthRedirect/AuthRedirect';
@@ -46,6 +48,8 @@ const AppRoutes = () => {
             <Route path="video-call" element={<VideoCall />} />
             <Route path="consultation-summary" element={<ConsultationSummary />} />
             <Route path="shop" element={<Shop />} />
+            <Route path="health-records" element={<HealthRecords />} />
+            <Route path="prescriptions" element={<Prescriptions />} />
             <Route path="contact" element={<Contact />} />
             <Route path="original" element={<Home />} />
           </Route>

@@ -2,100 +2,240 @@
   "doctors": [
     {
       "id": "dr_sharma",
-      "name": "Dr. Rajesh Sharma",
-      "qualification": "MBBS, MD (General Medicine)",
-      "specialization": "General Physician",
-      "experience": "15 years",
+      "name": {
+        "en": "Dr. Rajesh Sharma",
+        "hi": "डॉ. राजेश शर्मा",
+        "pa": "ਡਾ. ਰਾਜੇਸ਼ ਸ਼ਰਮਾ"
+      },
+      "qualification": {
+        "en": "MBBS, MD (General Medicine)",
+        "hi": "एमबीबीएस, एमडी (सामान्य चिकित्सा)",
+        "pa": "ਐਮਬੀਬੀਐਸ, ਐਮਡੀ (ਜਨਰਲ ਮੈਡਿਸਿਨ)"
+      },
+      "specialization": {
+        "en": "General Physician",
+        "hi": "सामान्य चिकित्सक",
+        "pa": "ਜਨਰਲ ਡਾਕਟਰ"
+      },
+      "experience": {
+        "en": "15 years",
+        "hi": "15 साल",
+        "pa": "15 ਸਾਲ"
+      },
       "rating": 4.8,
-      "consultationFee": 200,
+      "consultationFee": 0,
       "languages": ["Hindi", "English", "Punjabi"],
       "available": true,
       "image": "👨‍⚕️",
-      "description": "Experienced in treating common ailments, fever, cold, and general health issues."
+      "description": {
+        "en": "Experienced in treating common ailments, fever, cold, and general health issues.",
+        "hi": "सामान्य बीमारियों, बुखार, सर्दी और सामान्य स्वास्थ्य समस्याओं के उपचार में अनुभवी।",
+        "pa": "ਆਮ ਬਿਮਾਰੀਆਂ, ਬੁਖਾਰ, ਸਰਦੀ ਅਤੇ ਆਮ ਸਿਹਤ ਸਮੱਸਿਆਵਾਂ ਦੇ ਇਲਾਜ ਵਿੱਚ ਅਨੁਭਵੀ।"
+      }
     },
     {
       "id": "dr_priya",
-      "name": "Dr. Priya Gupta",
-      "qualification": "MBBS, MD (Pediatrics)",
-      "specialization": "Child Specialist",
-      "experience": "12 years",
+      "name": {
+        "en": "Dr. Priya Gupta",
+        "hi": "डॉ. प्रिया गुप्ता",
+        "pa": "ਡਾ. ਪ੍ਰਿਯਾ ਗੁਪਤਾ"
+      },
+      "qualification": {
+        "en": "MBBS, MD (Pediatrics)",
+        "hi": "एमबीबीएस, एमडी (बाल रोग)",
+        "pa": "ਐਮਬੀਬੀਐਸ, ਐਮਡੀ (ਬੱਚਿਆਂ ਦੀ ਬਿਮਾਰੀ)"
+      },
+      "specialization": {
+        "en": "Child Specialist",
+        "hi": "बाल रोग विशेषज्ञ",
+        "pa": "ਬੱਚਿਆਂ ਦੇ ਮਾਹਰ"
+      },
+      "experience": {
+        "en": "12 years",
+        "hi": "12 साल",
+        "pa": "12 ਸਾਲ"
+      },
       "rating": 4.9,
-      "consultationFee": 250,
+      "consultationFee": 0,
       "languages": ["Hindi", "English"],
       "available": true,
       "image": "👩‍⚕️",
-      "description": "Specialist in child healthcare, vaccination, and growth monitoring."
+      "description": {
+        "en": "Specialist in child healthcare, vaccination, and growth monitoring.",
+        "hi": "बाल स्वास्थ्य, टीकाकरण और विकास की निगरानी में विशेषज्ञ।",
+        "pa": "ਬੱਚਿਆਂ ਦੀ ਸਿਹਤ, ਟੀਕਾਕਰਣ ਅਤੇ ਵਿਕਾਸ ਦੀ ਨਿਗਰਾਨੀ ਵਿੱਚ ਮਾਹਰ।"
+      }
     },
     {
       "id": "dr_kumar",
-      "name": "Dr. Amit Kumar",
-      "qualification": "MBBS, MS (Surgery)",
-      "specialization": "General Surgeon",
-      "experience": "18 years",
+      "name": {
+        "en": "Dr. Amit Kumar",
+        "hi": "डॉ. अमित कुमार",
+        "pa": "ਡਾ. ਅਮਿਤ ਕੁਮਾਰ"
+      },
+      "qualification": {
+        "en": "MBBS, MS (Surgery)",
+        "hi": "एमबीबीएस, एमएस (सर्जरी)",
+        "pa": "ਐਮਬੀਬੀਐਸ, ਐਮਐਸ (ਸਰਜਰੀ)"
+      },
+      "specialization": {
+        "en": "General Surgeon",
+        "hi": "सामान्य सर्जन",
+        "pa": "ਜਨਰਲ ਸਰਜਨ"
+      },
+      "experience": {
+        "en": "18 years",
+        "hi": "18 साल",
+        "pa": "18 ਸਾਲ"
+      },
       "rating": 4.7,
-      "consultationFee": 300,
+      "consultationFee": 0,
       "languages": ["Hindi", "English"],
       "available": false,
       "image": "👨‍⚕️",
-      "description": "Expert in general surgery and emergency medical procedures."
+      "description": {
+        "en": "Expert in general surgery and emergency medical procedures.",
+        "hi": "सामान्य सर्जरी और आपातकालीन चिकित्सा प्रक्रियाओं में विशेषज्ञ।",
+        "pa": "ਜਨਰਲ ਸਰਜਰੀ ਅਤੇ ਐਮਰਜੈਂਸੀ ਮੈਡੀਕਲ ਪ੍ਰਕਿਰਿਆਵਾਂ ਵਿੱਚ ਮਾਹਰ।"
+      }
     },
     {
       "id": "dr_singh",
-      "name": "Dr. Manpreet Singh",
-      "qualification": "MBBS, DM (Cardiology)",
-      "specialization": "Heart Specialist",
-      "experience": "20 years",
+      "name": {
+        "en": "Dr. Manpreet Singh",
+        "hi": "डॉ. मनप्रीत सिंह",
+        "pa": "ਡਾ. ਮਨਪ੍ਰੀਤ ਸਿੰਘ"
+      },
+      "qualification": {
+        "en": "MBBS, DM (Cardiology)",
+        "hi": "एमबीबीएस, डीएम (कार्डियोलॉजी)",
+        "pa": "ਐਮਬੀਬੀਐਸ, ਡੀਐਮ (ਕਾਰਡੀਓਲੋਜੀ)"
+      },
+      "specialization": {
+        "en": "Heart Specialist",
+        "hi": "हृदय रोग विशेषज्ञ",
+        "pa": "ਦਿਲ ਦੇ ਮਾਹਰ"
+      },
+      "experience": {
+        "en": "20 years",
+        "hi": "20 साल",
+        "pa": "20 ਸਾਲ"
+      },
       "rating": 4.9,
-      "consultationFee": 400,
+      "consultationFee": 0,
       "languages": ["Hindi", "English", "Punjabi"],
       "available": true,
       "image": "👨‍⚕️",
-      "description": "Cardiologist specializing in heart diseases and blood pressure management."
+      "description": {
+        "en": "Cardiologist specializing in heart diseases and blood pressure management.",
+        "hi": "हृदय रोग और रक्तचाप प्रबंधन में विशेषज्ञ कार्डियोलॉजिस्ट।",
+        "pa": "ਦਿਲ ਦੀ ਬਿਮਾਰੀ ਅਤੇ ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ ਦੇ ਪ੍ਰਬੰਧਨ ਵਿੱਚ ਮਾਹਰ ਕਾਰਡੀਓਲਾਜਿਸਟ।"
+      }
     },
     {
       "id": "dr_kaur",
-      "name": "Dr. Simran Kaur",
-      "qualification": "MBBS, MD (Gynecology)",
-      "specialization": "Women's Health",
-      "experience": "14 years",
+      "name": {
+        "en": "Dr. Simran Kaur",
+        "hi": "डॉ. सिमरन कौर",
+        "pa": "ਡਾ. ਸਿਮਰਨ ਕੌਰ"
+      },
+      "qualification": {
+        "en": "MBBS, MD (Gynecology)",
+        "hi": "एमबीबीएस, एमडी (स्त्री रोग)",
+        "pa": "ਐਮਬੀਬੀਐਸ, ਐਮਡੀ (ਔਰਤਾਂ ਦੀ ਬਿਮਾਰੀ)"
+      },
+      "specialization": {
+        "en": "Women's Health",
+        "hi": "महिला स्वास्थ्य",
+        "pa": "ਔਰਤਾਂ ਦੀ ਸਿਹਤ"
+      },
+      "experience": {
+        "en": "14 years",
+        "hi": "14 साल",
+        "pa": "14 ਸਾਲ"
+      },
       "rating": 4.8,
-      "consultationFee": 280,
+      "consultationFee": 0,
       "languages": ["Hindi", "English", "Punjabi"],
       "available": true,
       "image": "👩‍⚕️",
-      "description": "Specialist in women's health, pregnancy care, and reproductive health."
+      "description": {
+        "en": "Specialist in women's health, pregnancy care, and reproductive health.",
+        "hi": "महिला स्वास्थ्य, गर्भावस्था देखभाल और प्रजनन स्वास्थ्य में विशेषज्ञ।",
+        "pa": "ਔਰਤਾਂ ਦੀ ਸਿਹਤ, ਗਰਭ ਅਵਸਥਾ ਦੀ ਦੇਖਭਾਲ ਅਤੇ ਪ੍ਰਜਨਨ ਸਿਹਤ ਵਿੱਚ ਮਾਹਰ।"
+      }
     }
   ],
   "categories": [
     {
       "id": "general",
-      "name": "General Physician",
+      "name": {
+        "en": "General Physician",
+        "hi": "सामान्य चिकित्सक",
+        "pa": "ਜਨਰਲ ਡਾਕਟਰ"
+      },
       "icon": "🩺",
-      "description": "Common health issues, fever, cold, general checkup"
+      "description": {
+        "en": "Common health issues, fever, cold, general checkup",
+        "hi": "सामान्य स्वास्थ्य समस्याएं, बुखार, सर्दी, सामान्य जांच",
+        "pa": "ਆਮ ਸਿਹਤ ਸਮੱਸਿਆਵਾਂ, ਬੁਖਾਰ, ਸਰਦੀ, ਆਮ ਜਾਂਚ"
+      }
     },
     {
       "id": "pediatric",
-      "name": "Child Specialist",
-      "icon": "��",
-      "description": "Child healthcare, vaccination, growth monitoring"
+      "name": {
+        "en": "Child Specialist",
+        "hi": "बाल रोग विशेषज्ञ",
+        "pa": "ਬੱਚਿਆਂ ਦੇ ਮਾਹਰ"
+      },
+      "icon": "👶",
+      "description": {
+        "en": "Child healthcare, vaccination, growth monitoring",
+        "hi": "बाल स्वास्थ्य, टीकाकरण, विकास निगरानी",
+        "pa": "ਬੱਚਿਆਂ ਦੀ ਸਿਹਤ, ਟੀਕਾਕਰਣ, ਵਿਕਾਸ ਨਿਗਰਾਨੀ"
+      }
     },
     {
       "id": "surgery",
-      "name": "General Surgeon",
+      "name": {
+        "en": "General Surgeon",
+        "hi": "सामान्य सर्जन",
+        "pa": "ਜਨਰਲ ਸਰਜਨ"
+      },
       "icon": "⚕️",
-      "description": "Surgical procedures and emergency care"
+      "description": {
+        "en": "Surgical procedures and emergency care",
+        "hi": "सर्जिकल प्रक्रियाएं और आपातकालीन देखभाल",
+        "pa": "ਸਰਜੀਕਲ ਪ੍ਰਕਿਰਿਆਵਾਂ ਅਤੇ ਐਮਰਜੈਂਸੀ ਦੇਖਭਾਲ"
+      }
     },
     {
       "id": "cardiology",
-      "name": "Heart Specialist",
+      "name": {
+        "en": "Heart Specialist",
+        "hi": "हृदय रोग विशेषज्ञ",
+        "pa": "ਦਿਲ ਦੇ ਮਾਹਰ"
+      },
       "icon": "❤️",
-      "description": "Heart diseases, blood pressure, cardiac care"
+      "description": {
+        "en": "Heart diseases, blood pressure, cardiac care",
+        "hi": "हृदय रोग, रक्तचाप, हृदय देखभाल",
+        "pa": "ਦਿਲ ਦੀ ਬਿਮਾਰੀ, ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ, ਦਿਲ ਦੀ ਦੇਖਭਾਲ"
+      }
     },
     {
       "id": "gynecology",
-      "name": "Women's Health",
+      "name": {
+        "en": "Women's Health",
+        "hi": "महिला स्वास्थ्य",
+        "pa": "ਔਰਤਾਂ ਦੀ ਸਿਹਤ"
+      },
       "icon": "👩‍⚕️",
-      "description": "Women's health, pregnancy, reproductive care"
+      "description": {
+        "en": "Women's health, pregnancy, reproductive care",
+        "hi": "महिला स्वास्थ्य, गर्भावस्था, प्रजनन देखभाल",
+        "pa": "ਔਰਤਾਂ ਦੀ ਸਿਹਤ, ਗਰਭ ਅਵਸਥਾ, ਪ੍ਰਜਨਨ ਦੇਖਭਾਲ"
+      }
     }
   ]
 }

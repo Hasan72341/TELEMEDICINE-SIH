@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { getLocalizedContent } from '../../utils/i18nUtils';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
+import DoctorAvatar from '../../components/Avatar/DoctorAvatar';
 import doctorsData from '../../data/doctors.json';
 import slotsData from '../../data/slots.json';
 import "./consultation.css";
 
+// Debug data loading
+console.log('Doctors data loaded:', doctorsData);
+console.log('Slots data loaded:', slotsData);
+
 const Consultation = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { t, i18n } = useTranslation();
   const [currentStep, setCurrentStep] = useState('category'); // category, doctor, slot, confirmation
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedDoctor, setSelectedDoctor] = useState(null);
@@ -15,6 +24,7 @@ const Consultation = () => {
   const [userAuth, setUserAuth] = useState(null);
   const [userPrefs, setUserPrefs] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [preSelectedDoctor, setPreSelectedDoctor] = useState(null);
 
   useEffect(() => {
     // Check authentication
@@ -22,73 +32,96 @@ const Consultation = () => {
     const prefs = localStorage.getItem('graminSwasthyaPrefs');
     
     if (!auth) {
-      navigate('/language');
-      return;
+      // For demo purposes, create a temporary auth if coming from doctor selection
+      if (location.state?.selectedDoctor) {
+        const tempAuth = {
+          aadhar: 'demo-user',
+          name: 'Demo User',
+          phone: '9999999999'
+        };
+        setUserAuth(tempAuth);
+      } else {
+        navigate('/language');
+        return;
+      }
+    } else {
+      setUserAuth(JSON.parse(auth));
     }
     
-    setUserAuth(JSON.parse(auth));
     if (prefs) {
       setUserPrefs(JSON.parse(prefs));
     }
-  }, [navigate]);
 
-  const categories = [
-    {
-      id: 'general',
-      name: 'General Medicine',
-      icon: '🩺',
-      description: 'Common health issues, fever, cold, etc.',
-      hindi: 'सामान्य चिकित्सा'
-    },
-    {
-      id: 'pediatrics',
-      name: 'Pediatrics',
-      icon: '👶',
-      description: 'Child health and development',
-      hindi: 'बाल रोग विशेषज्ञ'
-    },
-    {
-      id: 'gynecology',
-      name: 'Gynecology',
-      icon: '👩‍⚕️',
-      description: 'Women\'s health and reproductive care',
-      hindi: 'स्त्री रोग विशेषज्ञ'
-    },
-    {
-      id: 'dermatology',
-      name: 'Dermatology',
-      icon: '🔬',
-      description: 'Skin, hair, and nail conditions',
-      hindi: 'त्वचा विशेषज्ञ'
-    },
-    {
-      id: 'orthopedics',
-      name: 'Orthopedics',
-      icon: '🦴',
-      description: 'Bone, joint, and muscle problems',
-      hindi: 'हड्डी रोग विशेषज्ञ'
-    },
-    {
-      id: 'cardiology',
-      name: 'Cardiology',
-      icon: '❤️',
-      description: 'Heart and cardiovascular health',
-      hindi: 'हृदय रोग विशेषज्ञ'
+    // Check if a doctor was pre-selected from the doctors page
+    if (location.state?.selectedDoctor) {
+      const doctor = location.state.selectedDoctor;
+      
+      // Validate doctor data
+      if (doctor && doctor.id && doctor.name && doctor.specialization) {
+        setPreSelectedDoctor(doctor);
+        setSelectedDoctor(doctor);
+        const specialization = getLocalizedContent(doctor.specialization, i18n.language, doctor.specialization);
+        setSelectedCategory(specialization.toLowerCase().replace(/\s+/g, '-'));
+        setCurrentStep('slot');
+        
+        // Set default date to today
+        const today = new Date().toISOString().split('T')[0];
+        setSelectedDate(today);
+      } else {
+        console.error('Invalid doctor data received:', doctor);
+        // Fallback to category selection if doctor data is invalid
+        setCurrentStep('category');
+      }
     }
-  ];
+  }, [navigate, location.state]);
+
+  // Use categories from doctors.json
+  const categories = doctorsData.categories;
 
   const filteredDoctors = selectedCategory 
-    ? doctorsData.doctors.filter(doctor => 
+    ? (doctorsData?.doctors || []).filter(doctor => 
         doctor.categories && doctor.categories.includes(selectedCategory)
       )
     : [];
 
+  // Get all available slots from the slots data structure
+  const getAllSlots = () => {
+    if (!slotsData?.timeSlots) return [];
+    return slotsData.timeSlots.flatMap(dateSlot => 
+      dateSlot.slots.map(slot => ({
+        ...slot,
+        date: dateSlot.date
+      }))
+    );
+  };
+
   const availableSlots = selectedDoctor && selectedDate
-    ? slotsData.slots.filter(slot => 
+    ? getAllSlots().filter(slot => 
         slot.doctorId === selectedDoctor.id && 
         slot.date === selectedDate && 
         slot.available
       )
+    : [];
+
+  // Generate mock slots if none exist for the selected doctor
+  const generateMockSlots = (doctorId, date) => {
+    if (!doctorId || !date) return [];
+    
+    const times = ['09:00 AM', '10:00 AM', '11:00 AM', '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'];
+    return times.map((time, index) => ({
+      id: `mock-${doctorId}-${date}-${index}`,
+      doctorId: doctorId,
+      date: date,
+      time: time,
+      available: true,
+      mock: true // Flag to identify mock slots
+    }));
+  };
+
+  const finalAvailableSlots = selectedDoctor && selectedDate
+    ? (availableSlots.length > 0 
+        ? availableSlots 
+        : generateMockSlots(selectedDoctor.id, selectedDate))
     : [];
 
   const getAvailableDates = () => {
@@ -129,38 +162,54 @@ const Consultation = () => {
       return;
     }
 
+    if (!selectedDate) {
+      alert('Please select a date');
+      return;
+    }
+
+    if (!selectedDoctor) {
+      alert('Something went wrong. Please go back and select a doctor.');
+      return;
+    }
+
     setIsLoading(true);
     
-    // Simulate booking process
+    // Simulate booking process with proper error handling
     setTimeout(() => {
-      // Update slot availability (in real app, this would be an API call)
-      const updatedSlots = slotsData.slots.map(slot => 
-        slot.id === selectedSlot.id 
-          ? { ...slot, available: false, bookedBy: userAuth.aadhar }
-          : slot
-      );
-      
-      // Store booking in localStorage (in real app, this would be saved to database)
-      const booking = {
-        id: Date.now(),
-        doctorId: selectedDoctor.id,
-        doctorName: selectedDoctor.name,
-        category: selectedCategory,
-        date: selectedDate,
-        time: selectedSlot.time,
-        patientAadhar: userAuth.aadhar,
-        status: 'confirmed',
-        consultationFee: selectedDoctor.consultationFee,
-        bookedAt: new Date().toISOString()
-      };
-      
-      const existingBookings = JSON.parse(localStorage.getItem('consultationBookings') || '[]');
-      existingBookings.push(booking);
-      localStorage.setItem('consultationBookings', JSON.stringify(existingBookings));
-      
-      setIsLoading(false);
-      setCurrentStep('confirmation');
-    }, 2000);
+      try {
+        // Store booking in localStorage (in real app, this would be saved to database)
+        const booking = {
+          id: Date.now(),
+          doctorId: selectedDoctor.id,
+          doctorName: getLocalizedContent(selectedDoctor.name, i18n.language, selectedDoctor.name),
+          doctorSpecialization: getLocalizedContent(selectedDoctor.specialization, i18n.language, selectedDoctor.specialization),
+          category: selectedCategory || getLocalizedContent(selectedDoctor.specialization, i18n.language, selectedDoctor.specialization),
+          date: selectedDate,
+          time: selectedSlot.time,
+          patientAadhar: userAuth?.aadhar || 'guest',
+          status: 'confirmed',
+          consultationFee: selectedDoctor.consultationFee,
+          bookedAt: new Date().toISOString(),
+          source: preSelectedDoctor ? 'doctor-card' : 'category-flow'
+        };
+        
+        const existingBookings = JSON.parse(localStorage.getItem('consultationBookings') || '[]');
+        existingBookings.push(booking);
+        localStorage.setItem('consultationBookings', JSON.stringify(existingBookings));
+        
+        // Show success feedback
+        if (userPrefs?.mode === 'voice-only') {
+          speakText(`Booking confirmed with Dr. ${getLocalizedContent(selectedDoctor.name, i18n.language, selectedDoctor.name)} on ${formatDate(selectedDate)} at ${selectedSlot.time}`);
+        }
+        
+        setIsLoading(false);
+        setCurrentStep('confirmation');
+      } catch (error) {
+        console.error('Booking failed:', error);
+        setIsLoading(false);
+        alert('Sorry, there was an error booking your appointment. Please try again.');
+      }
+    }, 1500);
   };
 
   const speakText = (text) => {
@@ -172,7 +221,29 @@ const Consultation = () => {
   };
 
   if (!userAuth) {
-    return <div>Loading...</div>;
+    return (
+      <div className="consultation-container">
+        <div className="loading-message">
+          <h2>Loading consultation...</h2>
+          <p>Please wait while we set up your appointment booking.</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error boundary check for missing data
+  if (!doctorsData?.doctors || !Array.isArray(doctorsData.doctors)) {
+    return (
+      <div className="consultation-container">
+        <div className="error-message">
+          <h2>⚠️ Service Temporarily Unavailable</h2>
+          <p>We're having trouble loading doctor information. Please try again later.</p>
+          <button onClick={() => navigate('/doctors')} className="back-btn">
+            ← Back to Doctors
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -187,20 +258,22 @@ const Consultation = () => {
 
       {/* Progress Indicator */}
       <div className="progress-indicator">
-        <div className={`step ${currentStep === 'category' ? 'active' : currentStep !== 'category' ? 'completed' : ''}`}>
-          <span>1</span>
-          <p>Category</p>
-        </div>
-        <div className={`step ${currentStep === 'doctor' ? 'active' : ['slot', 'confirmation'].includes(currentStep) ? 'completed' : ''}`}>
-          <span>2</span>
-          <p>Doctor</p>
+        {!preSelectedDoctor && (
+          <div className={`step ${currentStep === 'category' ? 'active' : currentStep !== 'category' ? 'completed' : ''}`}>
+            <span>1</span>
+            <p>Category</p>
+          </div>
+        )}
+        <div className={`step ${preSelectedDoctor ? 'completed' : (currentStep === 'doctor' ? 'active' : ['slot', 'confirmation'].includes(currentStep) ? 'completed' : '')}`}>
+          <span>{preSelectedDoctor ? '1' : '2'}</span>
+          <p>Doctor {preSelectedDoctor ? '✓' : ''}</p>
         </div>
         <div className={`step ${currentStep === 'slot' ? 'active' : currentStep === 'confirmation' ? 'completed' : ''}`}>
-          <span>3</span>
+          <span>{preSelectedDoctor ? '2' : '3'}</span>
           <p>Schedule</p>
         </div>
         <div className={`step ${currentStep === 'confirmation' ? 'active' : ''}`}>
-          <span>4</span>
+          <span>{preSelectedDoctor ? '3' : '4'}</span>
           <p>Confirm</p>
         </div>
       </div>
@@ -217,9 +290,8 @@ const Consultation = () => {
                 onClick={() => handleCategorySelect(category)}
               >
                 <div className="category-icon">{category.icon}</div>
-                <h3>{category.name}</h3>
-                <p className="category-hindi">{category.hindi}</p>
-                <p className="category-description">{category.description}</p>
+                <h3>{getLocalizedContent(category.name, i18n.language, category.name)}</h3>
+                <p className="category-description">{getLocalizedContent(category.description, i18n.language, category.description)}</p>
                 <div className="category-arrow">→</div>
               </div>
             ))}
@@ -234,7 +306,7 @@ const Consultation = () => {
             <button onClick={() => setCurrentStep('category')} className="back-step-btn">
               ← Back to Categories
             </button>
-            <h2>Select Doctor for {categories.find(c => c.id === selectedCategory)?.name}</h2>
+            <h2>Select Doctor for {getLocalizedContent(categories.find(c => c.id === selectedCategory)?.name, i18n.language, 'Selected Category')}</h2>
           </div>
           
           <div className="doctors-grid">
@@ -244,16 +316,16 @@ const Consultation = () => {
                 className="doctor-card"
                 onClick={() => handleDoctorSelect(doctor)}
               >
-                <div className="doctor-avatar">
-                  <img src={doctor.image || '/api/placeholder/80/80'} alt={doctor.name} />
+                <div className="doctor-avatar-container">
+                  <DoctorAvatar doctor={doctor} size="large" />
                   <div className="online-indicator"></div>
                 </div>
                 
                 <div className="doctor-info">
-                  <h3>{doctor.name}</h3>
-                  <p className="doctor-qualification">{doctor.qualification}</p>
-                  <p className="doctor-specialization">{doctor.specialization}</p>
-                  <p className="doctor-experience">{doctor.experience} years experience</p>
+                  <h3>{getLocalizedContent(doctor.name, i18n.language, doctor.name)}</h3>
+                  <p className="doctor-qualification">{getLocalizedContent(doctor.qualification, i18n.language, doctor.qualification)}</p>
+                  <p className="doctor-specialization">{getLocalizedContent(doctor.specialization, i18n.language, doctor.specialization)}</p>
+                  <p className="doctor-experience">{getLocalizedContent(doctor.experience, i18n.language, doctor.experience)}</p>
                   
                   <div className="doctor-details">
                     <div className="rating">
@@ -278,17 +350,26 @@ const Consultation = () => {
       {currentStep === 'slot' && (
         <div className="slot-section">
           <div className="section-header">
-            <button onClick={() => setCurrentStep('doctor')} className="back-step-btn">
-              ← Back to Doctors
-            </button>
-            <h2>Schedule with Dr. {selectedDoctor?.name}</h2>
+            {preSelectedDoctor ? (
+              <button onClick={() => navigate('/doctors')} className="back-step-btn">
+                ← Back to Doctors
+              </button>
+            ) : (
+              <button onClick={() => setCurrentStep('doctor')} className="back-step-btn">
+                ← Back to Doctors
+              </button>
+            )}
+            <h2>Schedule with Dr. {getLocalizedContent(selectedDoctor?.name, i18n.language, selectedDoctor?.name)}</h2>
+            {preSelectedDoctor && (
+              <p className="pre-selected-info">You selected this doctor from the doctors page</p>
+            )}
           </div>
 
           <div className="selected-doctor-summary">
-            <img src={selectedDoctor?.image || '/api/placeholder/60/60'} alt={selectedDoctor?.name} />
+            <DoctorAvatar doctor={selectedDoctor} size="medium" />
             <div>
-              <h4>{selectedDoctor?.name}</h4>
-              <p>{selectedDoctor?.specialization}</p>
+              <h4>{getLocalizedContent(selectedDoctor?.name, i18n.language, selectedDoctor?.name)}</h4>
+              <p>{getLocalizedContent(selectedDoctor?.specialization, i18n.language, selectedDoctor?.specialization)}</p>
               <p>Consultation Fee: ₹{selectedDoctor?.consultationFee}</p>
             </div>
           </div>
@@ -312,7 +393,7 @@ const Consultation = () => {
             <div className="time-selection">
               <h3>Available Time Slots / उपलब्ध समय स्लॉट</h3>
               <div className="slots-grid">
-                {availableSlots.map(slot => (
+                {finalAvailableSlots.map(slot => (
                   <button
                     key={slot.id}
                     className={`slot-btn ${selectedSlot?.id === slot.id ? 'selected' : ''}`}
@@ -323,8 +404,14 @@ const Consultation = () => {
                 ))}
               </div>
               
-              {availableSlots.length === 0 && (
+              {finalAvailableSlots.length === 0 && (
                 <p className="no-slots">No slots available for this date. Please select another date.</p>
+              )}
+              
+              {preSelectedDoctor && finalAvailableSlots.length > 0 && (
+                <p className="slots-note">
+                  ✅ Available slots for Dr. {getLocalizedContent(selectedDoctor.name, i18n.language, selectedDoctor.name)} - Select your preferred time
+                </p>
               )}
             </div>
           )}
@@ -333,7 +420,7 @@ const Consultation = () => {
             <div className="booking-summary">
               <h3>Booking Summary</h3>
               <div className="summary-details">
-                <p><strong>Doctor:</strong> {selectedDoctor.name}</p>
+                <p><strong>Doctor:</strong> {getLocalizedContent(selectedDoctor.name, i18n.language, selectedDoctor.name)}</p>
                 <p><strong>Date:</strong> {formatDate(selectedDate)}</p>
                 <p><strong>Time:</strong> {selectedSlot.time}</p>
                 <p><strong>Consultation Fee:</strong> ₹{selectedDoctor.consultationFee}</p>
@@ -341,18 +428,28 @@ const Consultation = () => {
               
               <button 
                 onClick={handleSlotBooking} 
-                className="book-btn"
-                disabled={isLoading}
+                className={`book-btn ${isLoading ? 'loading' : ''}`}
+                disabled={isLoading || !selectedSlot}
               >
                 {isLoading ? (
                   <>
                     <div className="spinner"></div>
-                    Booking...
+                    Booking your appointment...
                   </>
                 ) : (
-                  '📅 Confirm Booking'
+                  <>
+                    📅 Confirm Booking with Dr. {getLocalizedContent(selectedDoctor.name, i18n.language, selectedDoctor.name)}
+                    <span className="booking-fee">₹{selectedDoctor.consultationFee}</span>
+                  </>
                 )}
               </button>
+              
+              {preSelectedDoctor && (
+                <div className="booking-info">
+                  <p>✅ You're booking directly with your selected doctor</p>
+                  <p>🕒 Your appointment will be confirmed instantly</p>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -372,11 +469,11 @@ const Consultation = () => {
             <div className="detail-card">
               <div className="detail-row">
                 <span>Doctor:</span>
-                <span>{selectedDoctor?.name}</span>
+                <span>{getLocalizedContent(selectedDoctor?.name, i18n.language, selectedDoctor?.name)}</span>
               </div>
               <div className="detail-row">
                 <span>Specialization:</span>
-                <span>{selectedDoctor?.specialization}</span>
+                <span>{getLocalizedContent(selectedDoctor?.specialization, i18n.language, selectedDoctor?.specialization)}</span>
               </div>
               <div className="detail-row">
                 <span>Date:</span>
@@ -407,17 +504,29 @@ const Consultation = () => {
             <button onClick={() => navigate('/home')} className="home-btn">
               🏠 Back to Home
             </button>
+            <button onClick={() => navigate('/doctors')} className="doctors-btn">
+              👩‍⚕️ Browse More Doctors
+            </button>
             <button 
-              onClick={() => alert('Video call feature would open in real app')} 
+              onClick={() => {
+                // In a real app, this would open the video call interface
+                alert(`Video consultation will be available 5 minutes before your appointment time (${selectedSlot?.time}). You'll receive a notification.`);
+              }} 
               className="join-btn"
             >
-              📹 Join Video Consultation (Demo)
+              📹 About Video Call
             </button>
           </div>
+          
+          {preSelectedDoctor && (
+            <div className="booking-source">
+              <p>✨ Thank you for booking directly from our doctors page!</p>
+            </div>
+          )}
 
           {userPrefs?.mode === 'voice-only' && (
             <button 
-              onClick={() => speakText(`Booking confirmed with Dr. ${selectedDoctor?.name} on ${formatDate(selectedDate)} at ${selectedSlot?.time}`)}
+              onClick={() => speakText(`Booking confirmed with Dr. ${getLocalizedContent(selectedDoctor?.name, i18n.language, selectedDoctor?.name)} on ${formatDate(selectedDate)} at ${selectedSlot?.time}`)}
               className="speak-confirmation-btn"
             >
               🔊 Hear Confirmation
