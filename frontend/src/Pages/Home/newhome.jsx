@@ -8,7 +8,7 @@ import ServiceCard from "../../components/Cards/ServiceCard";
 import homeData from "../../data/home.json";
 import "./newhome.css";
 
-const Home = () => {
+const NewHome = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   
@@ -421,4 +421,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default NewHome;
