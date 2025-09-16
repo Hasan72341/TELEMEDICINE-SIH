@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
-import 'import "./languageselect.css";';
+import "./languageselect.css";
 
 const LanguageSelect = () => {
   const navigate = useNavigate();

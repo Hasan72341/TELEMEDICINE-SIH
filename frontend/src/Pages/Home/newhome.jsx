@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import MotionWrapper from '../../components/MotionWrapper/MotionWrapper';
 import FeatureCard from '../../components/Cards/FeatureCard';
-import "./NewHome.css";
+import "./newhome.css";
 
 const Home = () => {
   const navigate = useNavigate();
