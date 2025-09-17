@@ -153,12 +153,79 @@
   },
   "consultation": {
     "title": "Book Consultation",
-    "subtitle": "Schedule a video call with a certified doctor",
+    "subtitle": "Connect with certified doctors for video consultation",
+    "backToHome": "Back to Home",
     "steps": {
-      "details": "Patient Details",
-      "doctor": "Choose Doctor",
-      "payment": "Payment",
-      "confirmation": "Confirmation"
+      "category": "Category",
+      "doctor": "Doctor",
+      "schedule": "Schedule",
+      "confirm": "Confirm"
+    },
+    "category": {
+      "title": "Select Medical Category",
+      "selectCategory": "Select Medical Category"
+    },
+    "doctor": {
+      "title": "Select Doctor for {{category}}",
+      "selectDoctor": "Select Doctor",
+      "backToCategories": "Back to Categories",
+      "noAvailable": "No doctors available in this category",
+      "tryAnother": "Please select another category or try again later.",
+      "goBackToCategories": "Go Back to Categories",
+      "languages": "Languages:",
+      "preSelected": "You selected this doctor from the doctors page"
+    },
+    "scheduling": {
+      "title": "Schedule with Dr. {{doctorName}}",
+      "backToDoctors": "Back to Doctors",
+      "selectDate": "Select Date",
+      "availableSlots": "Available Time Slots",
+      "noSlots": "No slots available for this date. Please select another date.",
+      "availableFor": "Available slots for Dr. {{doctorName}} - Select your preferred time",
+      "consultationFee": "Consultation Fee: ₹{{fee}}"
+    },
+    "summary": {
+      "title": "Booking Summary",
+      "doctor": "Doctor:",
+      "date": "Date:",
+      "time": "Time:",
+      "fee": "Consultation Fee:",
+      "confirmBooking": "Confirm Booking with Dr. {{doctorName}}",
+      "bookingFee": "₹{{fee}}",
+      "directBooking": "You're booking directly with your selected doctor",
+      "instantConfirmation": "Your appointment will be confirmed instantly",
+      "booking": "Booking your appointment..."
+    },
+    "confirmation": {
+      "success": "Booking Confirmed!",
+      "successMessage": "Your consultation has been successfully booked",
+      "details": "Booking Details",
+      "specialization": "Specialization:",
+      "nextSteps": "What's Next?",
+      "steps": {
+        "reminder": "You'll receive a reminder 15 minutes before your appointment",
+        "joinCall": "Join the video consultation from your dashboard",
+        "prepare": "Prepare any medical records or questions you may have",
+        "payment": "Payment will be processed after the consultation"
+      },
+      "actions": {
+        "backToHome": "Back to Home",
+        "browseDoctors": "Browse More Doctors",
+        "aboutVideoCall": "About Video Call"
+      },
+      "videoCallInfo": "Video consultation will be available 5 minutes before your appointment time ({{time}}). You'll receive a notification.",
+      "thankYou": "Thank you for booking directly from our doctors page!",
+      "hearConfirmation": "Hear Confirmation"
+    },
+    "loading": "Loading consultation...",
+    "loadingMessage": "Please wait while we set up your appointment booking.",
+    "serviceUnavailable": "Service Temporarily Unavailable",
+    "troubleLoading": "We're having trouble loading doctor information. Please try again later.",
+    "errors": {
+      "selectSlot": "Please select a time slot",
+      "selectDate": "Please select a date",
+      "selectDoctor": "Something went wrong. Please go back and select a doctor.",
+      "bookingFailed": "Sorry, there was an error booking your appointment. Please try again."
     }
   },
   "shop": {

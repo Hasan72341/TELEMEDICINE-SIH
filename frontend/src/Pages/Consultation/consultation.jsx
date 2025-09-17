@@ -250,10 +250,10 @@ const Consultation = () => {
     <MotionWrapper className="consultation-container" variant="container">
       <div className="consultation-header">
         <button onClick={() => navigate('/home')} className="back-btn">
-          ← Back to Home
+          ← {t('consultation.backToHome')}
         </button>
-        <h1>👩‍⚕️ Book Consultation</h1>
-        <p>Connect with certified doctors for video consultation</p>
+        <h1>👩‍⚕️ {t('consultation.title')}</h1>
+        <p>{t('consultation.subtitle')}</p>
       </div>
 
       {/* Progress Indicator */}
@@ -261,27 +261,27 @@ const Consultation = () => {
         {!preSelectedDoctor && (
           <div className={`step ${currentStep === 'category' ? 'active' : currentStep !== 'category' ? 'completed' : ''}`}>
             <span>1</span>
-            <p>Category</p>
+            <p>{t('consultation.steps.category')}</p>
           </div>
         )}
         <div className={`step ${preSelectedDoctor ? 'completed' : (currentStep === 'doctor' ? 'active' : ['slot', 'confirmation'].includes(currentStep) ? 'completed' : '')}`}>
           <span>{preSelectedDoctor ? '1' : '2'}</span>
-          <p>Doctor {preSelectedDoctor ? '✓' : ''}</p>
+          <p>{t('consultation.steps.doctor')} {preSelectedDoctor ? '✓' : ''}</p>
         </div>
         <div className={`step ${currentStep === 'slot' ? 'active' : currentStep === 'confirmation' ? 'completed' : ''}`}>
           <span>{preSelectedDoctor ? '2' : '3'}</span>
-          <p>Schedule</p>
+          <p>{t('consultation.steps.schedule')}</p>
         </div>
         <div className={`step ${currentStep === 'confirmation' ? 'active' : ''}`}>
           <span>{preSelectedDoctor ? '3' : '4'}</span>
-          <p>Confirm</p>
+          <p>{t('consultation.steps.confirm')}</p>
         </div>
       </div>
 
       {/* Category Selection */}
       {currentStep === 'category' && (
         <div className="category-section">
-          <h2>Select Medical Category / चिकित्सा श्रेणी चुनें</h2>
+          <h2>{t('consultation.category.title')}</h2>
           <div className="categories-grid">
             {categories.map(category => (
               <div
@@ -304,9 +304,16 @@ const Consultation = () => {
         <div className="doctor-section">
           <div className="section-header">
             <button onClick={() => setCurrentStep('category')} className="back-step-btn">
-              ← Back to Categories
+              ← {t('consultation.doctor.backToCategories')}
             </button>
-            <h2>Select Doctor for {getLocalizedContent(categories.find(c => c.id === selectedCategory)?.name, i18n.language, 'Selected Category')}</h2>
+            <h2>
+              {selectedCategory ? 
+                t('consultation.doctor.title', { 
+                  category: getLocalizedContent(categories.find(c => c.id === selectedCategory)?.name, i18n.language, 'Selected Category') 
+                }) : 
+                t('consultation.doctor.selectDoctor')
+              }
+            </h2>
           </div>
           
           <div className="doctors-grid">
@@ -337,7 +344,7 @@ const Consultation = () => {
                   </div>
                   
                   <div className="doctor-languages">
-                    <span>Languages: {doctor.languages.join(', ')}</span>
+                    <span>{t('consultation.doctor.languages')} {doctor.languages.join(', ')}</span>
                   </div>
                 </div>
               </div>
