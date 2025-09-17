@@ -9,14 +9,14 @@ import MainLayout from '../layouts/MainLayout';
 import Home from "../Pages/Home/home";
 import Doctors from "../Pages/Doctors/doctors";
 import Contact from "../Pages/Contact/contact";
-import HowItWorks from "../Pages/HowItWorks/howitworks";
+import HowItWorks from "../Pages/HowItWorks/HowItWorks";
 
 // Pages - New Features
 import LanguageSelect from '../Pages/LanguageSelect/languageselect';
 import Login from '../Pages/Login/login';
 import NewHome from '../Pages/Home/newhome';
 import SymptomChecker from '../Pages/SymptomChecker/symptomchecker';
-import AISymptomChecker from '../Pages/AISymptomChecker/AISymptomChecker';
+import AISymptomChecker from '../Pages/AISymptomChecker/aisymptomchecker';
 import Consultation from '../Pages/Consultation/consultation';
 import VideoCall from '../Pages/VideoCall/videocall';
 import ConsultationSummary from '../Pages/ConsultationSummary/consultationsummary';
