@@ -2125,9 +2125,22 @@ html {
   .additional-services-section {
     background-attachment: scroll !important;
   }
+  
+  /* Pin background image instead of stretching */
+  .home-container {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+  }
 }
 
 @media (max-width: 480px) {
+  /* Enhanced background fix for very small screens */
+  .home-container {
+    background-size: auto 100% !important;
+    background-position: center top !important;
+  }
+  
   /* Further reduce blur on very small screens */
   .hero-card,
   .service-card,
