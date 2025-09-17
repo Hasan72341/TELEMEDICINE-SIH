@@ -9,7 +9,7 @@ import MainLayout from '../layouts/MainLayout';
 import Home from "../Pages/Home/home";
 import Doctors from "../Pages/Doctors/doctors";
 import Contact from "../Pages/Contact/contact";
-import HowItWorks from "../Pages/HowItWorks/HowItWorks";
+import HowItWorks from "../Pages/HowItWorks/howitworks";
 
 // Pages - New Features
 import LanguageSelect from '../Pages/LanguageSelect/languageselect';
