@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
-import StepCard from "../../components/Cards/StepCard";
-import "./HowItWorks.css";
+import MotionWrapper from "../../components/MotionWrapper/MotionWrapper.jsx";
+import StepCard from "../../components/Cards/StepCard.jsx";
+import "./howitworks.css";
 
 const HowItWorks = () => {
   const { t } = useTranslation();
