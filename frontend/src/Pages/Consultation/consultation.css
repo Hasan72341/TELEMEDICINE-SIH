@@ -1591,6 +1591,9 @@
   /* Fix background attachment for mobile */
   .consultation-container {
     background-attachment: scroll !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
   }
   
   /* Reduce blur effects on mobile for better performance */
@@ -1605,6 +1608,12 @@
 }
 
 @media (max-width: 480px) {
+  /* Enhanced background fix for very small screens */
+  .consultation-container {
+    background-size: auto 100% !important;
+    background-position: center top !important;
+  }
+  
   .doctors-grid {
     grid-template-columns: 1fr;
     gap: 15px;
