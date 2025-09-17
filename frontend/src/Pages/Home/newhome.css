@@ -2091,3 +2091,60 @@ section h2 {
 html {
   scroll-behavior: smooth;
 }
+
+/* Mobile optimizations for better performance and fixed backgrounds */
+@media (max-width: 768px) {
+  /* Reduce blur effects on mobile for better performance */
+  .hero-card,
+  .service-card,
+  .step-card,
+  .feature-card,
+  .doctor-card,
+  .medicine-feature,
+  .service-item,
+  .step-item {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
+  
+  /* High blur modals get reduced blur on mobile */
+  .prescription-modal-content,
+  .modal-content {
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+  }
+  
+  /* Ensure all background attachments are scroll on mobile */
+  .home-container,
+  .hero-section,
+  .services-section,
+  .about-section,
+  .features-section,
+  .steps-section,
+  .medicine-shop-section,
+  .additional-services-section {
+    background-attachment: scroll !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce blur on very small screens */
+  .hero-card,
+  .service-card,
+  .step-card,
+  .feature-card,
+  .doctor-card,
+  .medicine-feature,
+  .service-item,
+  .step-item {
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+  }
+  
+  /* Minimal blur for modals on small screens */
+  .prescription-modal-content,
+  .modal-content {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
+}

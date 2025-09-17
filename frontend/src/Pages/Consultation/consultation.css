@@ -1587,6 +1587,21 @@
     justify-content: center;
     gap: 8px;
   }
+  
+  /* Fix background attachment for mobile */
+  .consultation-container {
+    background-attachment: scroll !important;
+  }
+  
+  /* Reduce blur effects on mobile for better performance */
+  .consultation-step,
+  .doctor-card,
+  .time-slot,
+  .selected-doctor-summary,
+  .consultation-form {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1718,5 +1733,15 @@
   
   .selected-doctor-summary > div:last-child {
     text-align: center;
+  }
+  
+  /* Further reduce blur on very small screens */
+  .consultation-step,
+  .doctor-card,
+  .time-slot,
+  .selected-doctor-summary,
+  .consultation-form {
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
   }
 }

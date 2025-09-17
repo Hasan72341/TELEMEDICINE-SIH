@@ -762,6 +762,20 @@
   .visit-header {
     justify-content: center;
   }
+  
+  /* Fix background attachment for mobile */
+  .health-records-container {
+    background-attachment: scroll !important;
+  }
+  
+  /* Reduce blur effects on mobile for better performance */
+  .patient-info-card,
+  .tab-content,
+  .record-item,
+  .health-tab {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -789,5 +803,14 @@
   
   .tab-label {
     display: none;
+  }
+  
+  /* Further reduce blur on very small screens */
+  .patient-info-card,
+  .tab-content,
+  .record-item,
+  .health-tab {
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
   }
 }

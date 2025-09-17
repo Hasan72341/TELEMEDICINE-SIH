@@ -618,6 +618,20 @@
   
   .back-btn {
     position: static;
+  }
+  
+  /* Fix background attachment for mobile */
+  .shop-container {
+    background-attachment: scroll !important;
+  }
+  
+  /* Reduce blur effects on mobile for better performance */
+  .shop-header,
+  .search-container,
+  .category-tabs,
+  .products-grid .product-card {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
     margin-bottom: 1rem;
   }
   
@@ -1024,6 +1038,18 @@
 /* Custom Scrollbar */
 .cart-items::-webkit-scrollbar {
   width: 6px;
+}
+
+@media (max-width: 480px) {
+  /* Further reduce blur on very small screens */
+  .shop-header,
+  .search-container,
+  .category-tabs,
+  .products-grid .product-card,
+  .no-results {
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+  }
 }
 
 .cart-items::-webkit-scrollbar-track {

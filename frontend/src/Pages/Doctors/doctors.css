@@ -1082,3 +1082,31 @@
   color: #333333 !important;
   font-weight: 400 !important;
 }
+
+/* Mobile optimizations for better performance and fixed backgrounds */
+@media (max-width: 768px) {
+  /* Fix background attachment for mobile */
+  .doctors-container {
+    background-attachment: scroll !important;
+  }
+  
+  /* Reduce blur effects on mobile for better performance */
+  .doctor-card,
+  .filters-section,
+  .search-container,
+  .filter-controls {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce blur on very small screens */
+  .doctor-card,
+  .filters-section,
+  .search-container,
+  .filter-controls {
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+  }
+}

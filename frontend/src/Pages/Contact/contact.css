@@ -173,4 +173,27 @@
   .contact-form {
     padding: 1.5rem;
   }
+  
+  /* Fix background attachment for mobile */
+  .contact-container {
+    background-attachment: scroll !important;
+  }
+  
+  /* Reduce blur effects on mobile for better performance */
+  .contact-form,
+  .contact-info,
+  .form-group {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce blur on very small screens */
+  .contact-form,
+  .contact-info,
+  .form-group {
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+  }
 }

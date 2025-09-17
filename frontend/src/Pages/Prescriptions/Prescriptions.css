@@ -475,6 +475,31 @@
     align-items: flex-start;
     gap: 0.5rem;
   }
+  
+  /* Fix background attachment for mobile */
+  .prescriptions-page {
+    background-attachment: scroll !important;
+  }
+  
+  /* Reduce blur effects on mobile for better performance */
+  .prescription-card,
+  .prescription-details,
+  .medicine-card,
+  .prescription-header {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce blur on very small screens */
+  .prescription-card,
+  .prescription-details,
+  .medicine-card,
+  .prescription-header {
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+  }
 }
 
 /* Custom scrollbar for prescription details */

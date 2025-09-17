@@ -132,3 +132,27 @@
     0 12px 35px rgba(255, 111, 0, 0.5),
     0 6px 15px rgba(0, 0, 0, 0.15);
 }
+
+/* Mobile optimizations for better performance and fixed backgrounds */
+@media (max-width: 768px) {
+  /* Fix background attachment for mobile */
+  .login-container {
+    background-attachment: scroll !important;
+  }
+  
+  /* Reduce blur effects if any exist */
+  .login-form,
+  .login-card {
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce blur on very small screens */
+  .login-form,
+  .login-card {
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+  }
+}
