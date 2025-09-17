@@ -14,7 +14,7 @@ import HowItWorks from "../Pages/HowItWorks/howitworks";
 // Pages - New Features
 import LanguageSelect from '../Pages/LanguageSelect/languageselect';
 import Login from '../Pages/Login/login';
-import NewHome from '../Pages/Home/NewHome.jsx';
+import NewHome from '../Pages/Home/NewHome';
 import SymptomChecker from '../Pages/SymptomChecker/symptomchecker';
 import AISymptomChecker from '../Pages/AISymptomChecker/AISymptomChecker';
 import Consultation from '../Pages/Consultation/consultation';

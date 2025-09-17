@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import { getLocalizedContent } from '../../utils/i18nUtils';
-import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
-import FeatureCard from "../../components/Cards/FeatureCard";
-import ServiceCard from "../../components/Cards/ServiceCard";
+import { getLocalizedContent } from '../../utils/i18nUtils.js';
+import MotionWrapper from "../../components/MotionWrapper/MotionWrapper.jsx";
+import FeatureCard from "../../components/Cards/FeatureCard.jsx";
+import ServiceCard from "../../components/Cards/ServiceCard.jsx";
 import homeData from "../../data/home.json";
 import "./newhome.css";
 
