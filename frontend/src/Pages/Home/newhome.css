@@ -14,10 +14,12 @@
   overflow-x: hidden;
 }
 
-/* Fallback for devices that don't support background-attachment: fixed */
+/* Keep background pinned on mobile with proper sizing */
 @media (max-width: 768px) {
   .home-container {
-    background-attachment: scroll;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center center !important;
   }
 }
 
@@ -2114,31 +2116,21 @@ html {
     -webkit-backdrop-filter: blur(4px) !important;
   }
   
-  /* Ensure all background attachments are scroll on mobile */
-  .home-container,
-  .hero-section,
-  .services-section,
-  .about-section,
-  .features-section,
-  .steps-section,
-  .medicine-shop-section,
-  .additional-services-section {
-    background-attachment: scroll !important;
-  }
-  
-  /* Pin background image instead of stretching */
+  /* Keep background pinned but prevent blur on mobile */
   .home-container {
-    background-size: contain !important;
+    background-attachment: fixed !important;
+    background-size: auto 100vh !important;
     background-repeat: no-repeat !important;
-    background-position: center top !important;
+    background-position: center center !important;
   }
 }
 
 @media (max-width: 480px) {
-  /* Enhanced background fix for very small screens */
+  /* Keep background pinned with proper sizing for small screens */
   .home-container {
-    background-size: auto 100% !important;
-    background-position: center top !important;
+    background-attachment: fixed !important;
+    background-size: 100vw auto !important;
+    background-position: center center !important;
   }
   
   /* Further reduce blur on very small screens */
