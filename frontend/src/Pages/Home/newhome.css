@@ -14,12 +14,25 @@
   overflow-x: hidden;
 }
 
-/* Keep background pinned on mobile with proper sizing */
+/* Mobile fix: Use pseudo-element for pinned background */
 @media (max-width: 768px) {
   .home-container {
-    background-attachment: fixed !important;
-    background-size: cover !important;
-    background-position: center center !important;
+    background: none !important;
+    position: relative;
+  }
+  
+  .home-container::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.9) 0%, rgba(255, 87, 34, 0.9) 100%), url('/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
 }
 
@@ -2116,20 +2129,21 @@ html {
     -webkit-backdrop-filter: blur(4px) !important;
   }
   
-  /* Keep background pinned but prevent blur on mobile */
+  /* Keep mobile background pinned using pseudo-element */
   .home-container {
-    background-attachment: fixed !important;
-    background-size: auto 100vh !important;
-    background-repeat: no-repeat !important;
+    background: none !important;
+  }
+  
+  .home-container::after {
+    background-size: cover !important;
     background-position: center center !important;
   }
 }
 
 @media (max-width: 480px) {
-  /* Keep background pinned with proper sizing for small screens */
-  .home-container {
-    background-attachment: fixed !important;
-    background-size: 100vw auto !important;
+  /* Ensure proper background sizing on very small screens */
+  .home-container::after {
+    background-size: cover !important;
     background-position: center center !important;
   }
   
