@@ -1,0 +1,42 @@
+{
+  "medicines": [
+    {
+      "id": "paracetamol-500",
+      "name": "Paracetamol 500mg",
+      "genericName": "Paracetamol",
+      "brand": "Crocin",
+      "category": "pain-relief",
+      "price": 25,
+      "originalPrice": 30,
+      "image": "💊",
+      "description": "Effective relief from fever, headache, and body pain. Safe for adults and children above 12 years.",
+      "prescriptionRequired": false,
+      "inStock": true,
+      "packSize": "10 tablets",
+      "dosage": "500mg",
+      "manufacturer": "GSK Pharmaceuticals",
+      "uses": ["Fever", "Headache", "Body Pain", "Muscle Pain"],
+      "rating": 4.5,
+      "reviews": 1250
+    },
+    {
+      "id": "aspirin-75",
+      "name": "Aspirin 75mg",
+      "genericName": "Acetylsalicylic Acid",
+      "brand": "Ecosprin",
+      "category": "chronic",
+      "price": 10,
+      "originalPrice": 12,
+      "image": "💊",
+      "description": "Blood thinner used for heart health.",
+      "prescriptionRequired": true,
+      "inStock": true,
+      "packSize": "14 tablets",
+      "dosage": "75mg",
+      "manufacturer": "USV Ltd",
+      "uses": ["Heart Health", "Blood Thinner"],
+      "rating": 4.7,
+      "reviews": 890
+    }
+  ]
+}

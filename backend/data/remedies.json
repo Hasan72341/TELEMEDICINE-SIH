@@ -1,0 +1,32 @@
+{
+  "remedies": [
+    {
+      "id": "headache",
+      "symptoms": ["headache", "head pain", "migraine"],
+      "title": "Headache Relief",
+      "description": "Common headache remedies and when to seek medical help",
+      "remedies": [
+        "Rest in a quiet, dark room",
+        "Apply cold or warm compress to head",
+        "Stay hydrated - drink plenty of water",
+        "Try gentle neck and shoulder massage",
+        "Practice deep breathing exercises"
+      ],
+      "warning": "Consult doctor if headache persists for more than 24 hours",
+      "audioText": "For headache relief, rest in a quiet dark room, apply cold compress, drink plenty of water, and try gentle massage. See a doctor if pain persists."
+    },
+    {
+      "id": "fever",
+      "symptoms": ["fever", "high temperature", "body heat"],
+      "title": "Fever Management",
+      "description": "How to manage mild fever at home",
+      "remedies": [
+        "Rest and plenty of fluids",
+        "Sponging with lukewarm water",
+        "Light clothing"
+      ],
+      "warning": "Seek help if temperature exceeds 102°F or lasts >3 days",
+      "audioText": "Rest, drink water, and wear light clothes. Sponge with lukewarm water. See doctor if fever is high or persistent."
+    }
+  ]
+}
