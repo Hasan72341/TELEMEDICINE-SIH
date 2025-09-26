@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_DB=telemedicine
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/app
+    environment:
+      - POSTGRES_SERVER=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_DB=telemedicine
+      - OLLAMA_BASE_URL=http://ollama:11434/v1
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  doctor-frontend:
+    build: ./doctor-frontend
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend
+
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+
+  ollama-pull:
+    image: curlimages/curl
+    entrypoint: 
+      - /bin/sh
+      - -c
+      - |
+        sleep 10;
+        curl http://ollama:11434/api/pull -d '{"name": "llama3:8b"}'
+    depends_on:
+      - ollama
+
+volumes:
+  postgres_data:
+  ollama_data:
