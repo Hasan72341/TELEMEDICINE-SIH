@@ -73,9 +73,11 @@ const AISymptomChecker = () => {
     recognition.interimResults = false;
     
     // Set language based on current i18n language
-    const currentLang = localStorage.getItem('i18nextLng') || 'en';
-    recognition.lang = currentLang === 'hi' ? 'hi-IN' : 
-                      currentLang === 'pa' ? 'pa-IN' : 'en-US';
+    const rawLang = localStorage.getItem('i18nextLng') || 'en';
+    const normalizedLang = rawLang.startsWith('hi') ? 'hi' : 
+                          rawLang.startsWith('pa') ? 'pa' : 'en';
+    recognition.lang = normalizedLang === 'hi' ? 'hi-IN' : 
+                      normalizedLang === 'pa' ? 'pa-IN' : 'en-US';
 
     setIsListening(true);
 
@@ -154,42 +156,99 @@ const AISymptomChecker = () => {
     }, 400);
   };
 
-  const performAdvancedMatching = () => {
-    // Dummy flow: prepare a single static condition for display (not used in text)
-    // Prepare and show results
-    generateAIResponse();
-    setTimeout(() => setCurrentStep('results'), 100);
+  const performAdvancedMatching = async () => {
+    try {
+      // Get current language and normalize it
+      const rawLang = localStorage.getItem('i18nextLng') || 'en';
+      
+      // Normalize language code to only allowed values: en, hi, pa
+      const normalizeLanguage = (lang) => {
+        if (lang.startsWith('hi')) return 'hi';
+        if (lang.startsWith('pa')) return 'pa';
+        return 'en'; // Default to English for any other language
+      };
+      
+      const currentLang = normalizeLanguage(rawLang);
+      
+      // Determine the correct API base URL
+      const getApiBaseUrl = () => {
+        // Use environment variable if available
+        if (import.meta.env.VITE_API_BASE_URL) {
+          return import.meta.env.VITE_API_BASE_URL;
+        }
+        
+        // Fallback logic for development
+        if (import.meta.env.DEV || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          return 'http://localhost:8006';
+        }
+        
+        // Fallback for production/network access
+        return 'http://172.16.8.115:8006';
+      };
+      
+      const apiBaseUrl = getApiBaseUrl();
+      
+      // Call your FastAPI backend
+      const response = await fetch(`${apiBaseUrl}/remedy?symptom=${encodeURIComponent(symptoms)}&lang=${currentLang}`, {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`API Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      
+      // Format the AI response from your API
+      const formattedResponse = `🎯 ${t('aiSymptomChecker.results.condition')}: ${data.symptom}
+
+📝 ${t('aiSymptomChecker.sampleResponse.symptomsLabel')}: ${data.description}
+
+🏠 ${t('aiSymptomChecker.sampleResponse.homeRemediesLabel')}:
+
+${data.remedy}
+
+🌍 ${t('aiSymptomChecker.results.language')}: ${data.language.name} (${Math.round(data.language.confidence * 100)}% ${t('aiSymptomChecker.results.confident')})`;
+
+      setAiResponse(formattedResponse);
+      setCurrentStep('results');
+      
+    } catch (error) {
+      console.error('Error calling AI API:', error);
+      // Fallback to default response if API fails
+      generateFallbackResponse();
+      setCurrentStep('results');
+    }
   };
 
-  const generateAIResponse = () => {
-    // Generate multilingual response based on current language
-    const headacheResponse = {
-      condition: t('aiSymptomChecker.sampleResponse.headache.condition'),
-      symptoms: t('aiSymptomChecker.sampleResponse.headache.symptoms'),
-      homeRemedies: [
-        t('aiSymptomChecker.sampleResponse.headache.remedies.remedy1'),
-        t('aiSymptomChecker.sampleResponse.headache.remedies.remedy2'),
-        t('aiSymptomChecker.sampleResponse.headache.remedies.remedy3')
-      ]
-    };
+  const generateFallbackResponse = () => {
+    // Fallback response if API is unavailable
+    const fallbackResponse = `⚠️ ${t('aiSymptomChecker.fallback.apiUnavailable')}
 
-    const specificResponse = `${headacheResponse.condition}
+🎯 ${t('aiSymptomChecker.fallback.generalAdvice')}:
 
-${t('aiSymptomChecker.sampleResponse.symptomsLabel')}: ${headacheResponse.symptoms}
+🏠 ${t('aiSymptomChecker.fallback.basicRemedies')}:
 
-${t('aiSymptomChecker.sampleResponse.homeRemediesLabel')}:
+• ${t('aiSymptomChecker.fallback.remedy1')}
+• ${t('aiSymptomChecker.fallback.remedy2')}
+• ${t('aiSymptomChecker.fallback.remedy3')}
 
-${headacheResponse.homeRemedies.join('\n\n')}`;
+💡 ${t('aiSymptomChecker.fallback.suggestion')}`;
 
-    setAiResponse(specificResponse);
+    setAiResponse(fallbackResponse);
   };
 
   const speakText = (text) => {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(text);
-      const currentLang = localStorage.getItem('i18nextLng') || 'en';
-      utterance.lang = currentLang === 'hi' ? 'hi-IN' : 
-                       currentLang === 'pa' ? 'pa-IN' : 'en-US';
+      const rawLang = localStorage.getItem('i18nextLng') || 'en';
+      const normalizedLang = rawLang.startsWith('hi') ? 'hi' : 
+                            rawLang.startsWith('pa') ? 'pa' : 'en';
+      utterance.lang = normalizedLang === 'hi' ? 'hi-IN' : 
+                       normalizedLang === 'pa' ? 'pa-IN' : 'en-US';
       speechSynthesis.speak(utterance);
     }
   };

@@ -448,6 +448,10 @@
       "newAnalysis": "New Analysis",
       "bookConsultation": "Book Consultation",
       "getNaturalRemedies": "Get Natural Remedies",
+      "condition": "Condition",
+      "language": "Language",
+      "confident": "confident",
+      "listenToAnalysis": "Listen to Analysis",
       "actions": {
         "newAnalysis": "🔄 New Analysis",
         "consultDoctor": "👨‍⚕️ Consult Doctor",
@@ -517,7 +521,11 @@
       "homeRemedies": "Home Remedies (Indian)",
       "remedy1": "Drink kadha (tulsi, ginger, black pepper, clove boiled in water).",
       "remedy2": "Take warm haldi doodh (turmeric milk).",
-      "remedy3": "Inhale steam with ajwain (carom seeds)."
+      "remedy3": "Inhale steam with ajwain (carom seeds).",
+      "apiUnavailable": "AI service temporarily unavailable",
+      "generalAdvice": "General Health Advice",
+      "basicRemedies": "Basic Home Remedies",
+      "suggestion": "Please try again later or consult a doctor for persistent symptoms"
     },
     "common": {
       "learnMore": "Learn More",

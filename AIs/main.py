@@ -3,6 +3,29 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from openai import OpenAI
 import json
+import os
+from typing import List
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# ---------------------
+# Configuration
+# ---------------------
+HOST = os.getenv("HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT", 8006))
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "ollama")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:4b")
+DEBUG = os.getenv("DEBUG", "true").lower() == "true"
+
+# Parse CORS origins
+cors_origins_str = os.getenv("CORS_ORIGINS", '["*"]')
+try:
+    CORS_ORIGINS = json.loads(cors_origins_str)
+except json.JSONDecodeError:
+    CORS_ORIGINS = ["*"]  # Fallback
 
 # ---------------------
 # Pydantic models
@@ -24,8 +47,8 @@ class HomeRemedies(BaseModel):
 # Init OpenAI (Ollama backend)
 # ---------------------
 client = OpenAI(
-    api_key="ollama",
-    base_url="http://localhost:11434/v1"
+    api_key=OLLAMA_API_KEY,
+    base_url=OLLAMA_BASE_URL
 )
 
 # ---------------------
@@ -40,9 +63,9 @@ app = FastAPI(
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=CORS_ORIGINS,  # Use environment configuration
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
+    allow_methods=["GET", "POST", "PUT", "DELETE"],  # More specific methods
     allow_headers=["*"],  # Allows all headers
 )
 
@@ -77,7 +100,7 @@ async def get_remedy(symptom: str = Query(..., description="User symptom text"),
 
     # Call Ollama (Qwen)
     response = client.chat.completions.create(
-        model="qwen3:4b",  # adjust model as needed
+        model=OLLAMA_MODEL,  # Use environment variable
         messages=messages,
         response_format={
             "type": "json_schema",
@@ -93,3 +116,23 @@ async def get_remedy(symptom: str = Query(..., description="User symptom text"),
     return HomeRemedies(**data)
 
 
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    """Health check endpoint for deployment monitoring"""
+    return {
+        "status": "healthy",
+        "model": OLLAMA_MODEL,
+        "version": "1.0.0"
+    }
+
+
+# Run the server
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "main:app",
+        host=HOST,
+        port=PORT,
+        reload=DEBUG
+    )
